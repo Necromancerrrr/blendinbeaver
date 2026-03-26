@@ -11,27 +11,34 @@ public class SwingingArmMotion : MonoBehaviour
     [SerializeField] private GameObject ForwardDirection;
 
     //Vector3 Positions
-    [SerializeField] private Vector3 PositionPreviousFrameLeftHand;
-    [SerializeField] private Vector3 PositionPreviousFrameRightHand;
-    [SerializeField] private Vector3 PlayerPositionPreviousFrame;
-    [SerializeField] private Vector3 PlayerPositionCurrentFrame;
-    [SerializeField] private Vector3 PositionCurrentFrameLeftHand;
-    [SerializeField] private Vector3 PositionCurrentFrameRightHand;
+    private Vector3 PositionPreviousFrameLeftHand;
+    private Vector3 PositionPreviousFrameRightHand;
+    private Vector3 PlayerPositionPreviousFrame;
+    private Vector3 PlayerPositionCurrentFrame;
+    private Vector3 PositionCurrentFrameLeftHand;
+    private Vector3 PositionCurrentFrameRightHand;
 
     //Speed
     [SerializeField] private float Speed = 70;
     [SerializeField] private float HandSpeed;
+
+    //Script Reference
+    private BlendInGestures BlendInGestures;
 
     void Start()
     {
         PlayerPositionPreviousFrame = transform.position; //set current positions
         PositionPreviousFrameLeftHand = LeftHand.transform.position; //set previous positions
         PositionPreviousFrameRightHand = RightHand.transform.position;
+
+        BlendInGestures = GetComponent<BlendInGestures>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (BlendInGestures.blendingIn) return;
+
         // get forward direction from the center eye camera and set it to the forward direction object
         float yRotation = LeftHand.transform.eulerAngles.y;
 

@@ -1,36 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &2165251201533155316
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 623607422367554417}
-  m_Layer: 0
-  m_Name: Forward Direction
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &623607422367554417
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2165251201533155316}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 1}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 7917674758919744168}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &4065165008383249818
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -644,18 +613,15 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 5518899284880179292}
     - targetCorrespondingSourceObject: {fileID: 657184243640684915, guid: d6878e1999eb4b44a9f5a263af86c185, type: 3}
-      insertIndex: -1
+      insertIndex: 4
       addedObject: {fileID: 4070445081456813255}
-    - targetCorrespondingSourceObject: {fileID: 657184243640684915, guid: d6878e1999eb4b44a9f5a263af86c185, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 623607422367554417}
     - targetCorrespondingSourceObject: {fileID: 657184242222895506, guid: d6878e1999eb4b44a9f5a263af86c185, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1632400500797467239}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 2218496723442559054, guid: d6878e1999eb4b44a9f5a263af86c185, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1756122163381979949}
+      addedObject: {fileID: 6384170889625305398}
   m_SourcePrefab: {fileID: 100100000, guid: d6878e1999eb4b44a9f5a263af86c185, type: 3}
 --- !u!114 &866406836232131125 stripped
 MonoBehaviour:
@@ -668,6 +634,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3cd49dc1a38aff4fa00676ddd64cf4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &2165251201533155316 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8859555556726942767, guid: d6878e1999eb4b44a9f5a263af86c185, type: 3}
+  m_PrefabInstance: {fileID: 7277802326999645147}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &2469343163355645486 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5096715979615469045, guid: d6878e1999eb4b44a9f5a263af86c185, type: 3}
@@ -741,7 +712,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2218496723442559054, guid: d6878e1999eb4b44a9f5a263af86c185, type: 3}
   m_PrefabInstance: {fileID: 7277802326999645147}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1756122163381979949
+--- !u!114 &6384170889625305398
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -757,11 +728,5 @@ MonoBehaviour:
   RightHand: {fileID: 7917674758240283208}
   MainCamera: {fileID: 7917674758326848201}
   ForwardDirection: {fileID: 2165251201533155316}
-  PositionPreviousFrameLeftHand: {x: 0, y: 0, z: 0}
-  PositionPreviousFrameRightHand: {x: 0, y: 0, z: 0}
-  PlayerPositionPreviousFrame: {x: 0, y: 0, z: 0}
-  PlayerPositionCurrentFrame: {x: 0, y: 0, z: 0}
-  PositionCurrentFrameLeftHand: {x: 0, y: 0, z: 0}
-  PositionCurrentFrameRightHand: {x: 0, y: 0, z: 0}
   Speed: 70
   HandSpeed: 0
