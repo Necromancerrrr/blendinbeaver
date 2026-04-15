@@ -1,9 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class SwingingArmMotion : MonoBehaviour
 {
+
+    public bool blendingIn = false;
+
+    public InputActionReference leftTrigger;
+    public InputActionReference rightTrigger;
+
+
+    #region
     // Game Objects
     [SerializeField] private GameObject LeftHand;
     [SerializeField] private GameObject RightHand;
@@ -21,33 +30,41 @@ public class SwingingArmMotion : MonoBehaviour
     //Speed
     [SerializeField] private float Speed = 70;
     [SerializeField] private float HandSpeed;
-
-    //Script Reference
-    private BlendInGestures BlendInGestures;
+    #endregion
 
     void Start()
     {
         PlayerPositionPreviousFrame = transform.position; //set current positions
         PositionPreviousFrameLeftHand = LeftHand.transform.position; //set previous positions
         PositionPreviousFrameRightHand = RightHand.transform.position;
-
-        BlendInGestures = GetComponent<BlendInGestures>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (BlendInGestures.blendingIn) return;
+        PositionCurrentFrameLeftHand = LeftHand.transform.position;
+        PositionCurrentFrameRightHand = RightHand.transform.position;
 
+        if (leftTrigger.action.IsPressed() && rightTrigger.action.IsPressed())
+        {
+            blendingIn = false;
+            ArmSwingingMechanic(PositionCurrentFrameLeftHand, PositionCurrentFrameRightHand);
+
+            print("RUNNING");
+        }
+        else
+        {
+            ControllerDistance(PositionCurrentFrameLeftHand, PositionCurrentFrameRightHand);
+        }
+    }
+
+    private void ArmSwingingMechanic( Vector3 PositionCurrentFrameLeftHand, Vector3 PositionCurrentFrameRightHand)
+    {
         // get forward direction from the center eye camera and set it to the forward direction object
         float yRotation = LeftHand.transform.eulerAngles.y;
 
         //MainCamera.transform.eulerAngles.y;
         ForwardDirection.transform.eulerAngles = new Vector3(0, yRotation, 0);
-
-        // get positons of hands
-        PositionCurrentFrameLeftHand = LeftHand.transform.position;
-        PositionCurrentFrameRightHand = RightHand.transform.position;
 
         // position of player
         PlayerPositionCurrentFrame = transform.position;
@@ -70,5 +87,20 @@ public class SwingingArmMotion : MonoBehaviour
         PositionPreviousFrameRightHand = PositionCurrentFrameRightHand;
         // set player position previous frame
         PlayerPositionPreviousFrame = PlayerPositionCurrentFrame;
+    }
+
+    private void ControllerDistance(Vector3 PositionCurrentFrameLeftHand, Vector3 PositionCurrentFrameRightHand)
+    {
+        float leftDistance = Vector3.Distance(MainCamera.transform.position, PositionCurrentFrameLeftHand);
+        float rightDistance = Vector3.Distance(MainCamera.transform.position, PositionCurrentFrameRightHand);
+
+        if (leftDistance <= 0.2f && rightDistance <= 0.2f)
+        {
+            blendingIn = true;
+        }
+        else
+        {
+            blendingIn = false;
+        }
     }
 }

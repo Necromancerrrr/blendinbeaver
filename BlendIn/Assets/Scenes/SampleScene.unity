@@ -9620,6 +9620,8 @@ MonoBehaviour:
   blendingIn: 0
   leftGrip: {fileID: 1586269695115098663, guid: ffd0df961d5aaf34ba7ba02c53d3359c, type: 3}
   rightGrip: {fileID: 7733706496374974999, guid: ffd0df961d5aaf34ba7ba02c53d3359c, type: 3}
+  leftTrigger: {fileID: 1487604329128296142, guid: ffd0df961d5aaf34ba7ba02c53d3359c, type: 3}
+  rightTrigger: {fileID: -6735670030944177083, guid: ffd0df961d5aaf34ba7ba02c53d3359c, type: 3}
 --- !u!1 &1185129091
 GameObject:
   m_ObjectHideFlags: 0
@@ -11157,6 +11159,14 @@ PrefabInstance:
       propertyPath: Speed
       value: 120
       objectReference: {fileID: 0}
+    - target: {fileID: 6384170889625305398, guid: 77e7c27b2c5525e4aa8cc9f99d654486, type: 3}
+      propertyPath: leftTrigger
+      value: 
+      objectReference: {fileID: 1487604329128296142, guid: ffd0df961d5aaf34ba7ba02c53d3359c, type: 3}
+    - target: {fileID: 6384170889625305398, guid: 77e7c27b2c5525e4aa8cc9f99d654486, type: 3}
+      propertyPath: rightTrigger
+      value: 
+      objectReference: {fileID: -6735670030944177083, guid: ffd0df961d5aaf34ba7ba02c53d3359c, type: 3}
     - target: {fileID: 8806329115733545877, guid: 77e7c27b2c5525e4aa8cc9f99d654486, type: 3}
       propertyPath: m_Name
       value: Complete XR Origin Set Up Hands Variant

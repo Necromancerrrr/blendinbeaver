@@ -9,6 +9,9 @@ public class BlendInGestures : MonoBehaviour
     public InputActionReference leftGrip;
     public InputActionReference rightGrip;
 
+    public InputActionReference leftTrigger;
+    public InputActionReference rightTrigger;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -18,12 +21,12 @@ public class BlendInGestures : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (leftGrip.action.IsPressed() && rightGrip.action.IsPressed())
+        if (leftTrigger.action.IsPressed() && rightTrigger.action.IsPressed())
         {
             blendingIn = true;
             print("BLENDING IN");
         }
-        else
+        else if (leftGrip.action.IsPressed() && rightGrip.action.IsPressed())
         {
             blendingIn = false;
         }
