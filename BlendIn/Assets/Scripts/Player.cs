@@ -5,7 +5,8 @@ using UnityEngine.InputSystem;
 
 public class Player : MonoBehaviour
 {
-
+    public int score = 0;
+    
     public bool blendingIn = false;
 
     public InputActionReference leftTrigger;

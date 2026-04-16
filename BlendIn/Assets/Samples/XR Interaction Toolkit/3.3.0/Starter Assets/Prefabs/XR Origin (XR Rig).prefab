@@ -1083,6 +1083,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b3d06180f5f99847ae03b5c650b04dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  score: 0
   blendingIn: 0
   leftTrigger: {fileID: 1487604329128296142, guid: ffd0df961d5aaf34ba7ba02c53d3359c, type: 3}
   rightTrigger: {fileID: -6735670030944177083, guid: ffd0df961d5aaf34ba7ba02c53d3359c, type: 3}
@@ -1135,7 +1136,7 @@ GameObject:
   - component: {fileID: 142785037515159769}
   - component: {fileID: 2510071453985106671}
   m_Layer: 5
-  m_Name: ScoreText
+  m_Name: LeftScoreText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1381,6 +1382,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerCameraPosition: {fileID: 1767192434}
+  player: {fileID: 2384625035704376712}
+  leftHandScore: {fileID: 2510071453985106671}
+  rightHandScore: {fileID: 1781134028209618397}
+  testBranch: {fileID: 5504527063581437300, guid: 060abcfa8ffe99344b166f83f9db7820, type: 3}
 --- !u!1 &2190828208922718286
 GameObject:
   m_ObjectHideFlags: 0
@@ -2352,7 +2357,7 @@ GameObject:
   - component: {fileID: 7429689167197687338}
   - component: {fileID: 1781134028209618397}
   m_Layer: 5
-  m_Name: ScoreText
+  m_Name: RightScoreText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

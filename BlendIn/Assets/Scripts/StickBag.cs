@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 
 public class StickBag : MonoBehaviour
@@ -5,26 +6,30 @@ public class StickBag : MonoBehaviour
     // reference to player
     [SerializeField] private Transform playerCameraPosition;
 
+    [SerializeField] private Player player;
+
+    [SerializeField] private TMP_Text leftHandScore;
+    [SerializeField] private TMP_Text rightHandScore;
+
+    [SerializeField] private GameObject testBranch;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        transform.position = new Vector3(transform.position.x, playerCameraPosition.position.y/3, transform.position.z);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        transform.position = new Vector3(transform.position.x, playerCameraPosition.position.y / 3, transform.position.z);
     }
 
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "Collectable")
         {
+            player.score += 10;
+            leftHandScore.text = player.score.ToString();
+            rightHandScore.text = player.score.ToString();
 
             //animate it getting smaller?
             Destroy(collision.gameObject);
-            Instantiate(collision.gameObject, new Vector3(0, 1, 0), Quaternion.identity);
+            Instantiate(testBranch, new Vector3(1, 1, 1), Quaternion.identity);
         }
     }
 }
