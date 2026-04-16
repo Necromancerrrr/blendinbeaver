@@ -3783,6 +3783,137 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1753531268}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &1787129514
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 258815742623577873, guid: d6e063a0d29891e4a9b4aca5648e152b, type: 3}
+      propertyPath: m_text
+      value: PIPER JARVINEN
+      objectReference: {fileID: 0}
+    - target: {fileID: 1947047712583178125, guid: d6e063a0d29891e4a9b4aca5648e152b, type: 3}
+      propertyPath: m_text
+      value: 'I modelled, UV-unwrapped, and imported the low-poly bear model. Yet
+        to implement textures, rigging, and animations.
+
+
+        The week 8 agent
+        worksheets was used to implement the basic following mechanic.
+
+
+        I
+        followed YouTube tutorials [cited in script] to create a field of vision
+        for the bear, it will aggro once the player enters its FOV.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 2409310231579350215, guid: d6e063a0d29891e4a9b4aca5648e152b, type: 3}
+      propertyPath: m_Name
+      value: Piper's UI Panel
+      objectReference: {fileID: 0}
+    - target: {fileID: 6153180925603174797, guid: d6e063a0d29891e4a9b4aca5648e152b, type: 3}
+      propertyPath: m_text
+      value: BEAR MODEL + AI
+      objectReference: {fileID: 0}
+    - target: {fileID: 6688894064485113489, guid: d6e063a0d29891e4a9b4aca5648e152b, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6688894064485113489, guid: d6e063a0d29891e4a9b4aca5648e152b, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6688894064485113489, guid: d6e063a0d29891e4a9b4aca5648e152b, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6688894064485113489, guid: d6e063a0d29891e4a9b4aca5648e152b, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6688894064485113489, guid: d6e063a0d29891e4a9b4aca5648e152b, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6688894064485113489, guid: d6e063a0d29891e4a9b4aca5648e152b, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6688894064485113489, guid: d6e063a0d29891e4a9b4aca5648e152b, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 800
+      objectReference: {fileID: 0}
+    - target: {fileID: 6688894064485113489, guid: d6e063a0d29891e4a9b4aca5648e152b, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 600
+      objectReference: {fileID: 0}
+    - target: {fileID: 6688894064485113489, guid: d6e063a0d29891e4a9b4aca5648e152b, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.005
+      objectReference: {fileID: 0}
+    - target: {fileID: 6688894064485113489, guid: d6e063a0d29891e4a9b4aca5648e152b, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.005
+      objectReference: {fileID: 0}
+    - target: {fileID: 6688894064485113489, guid: d6e063a0d29891e4a9b4aca5648e152b, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.005
+      objectReference: {fileID: 0}
+    - target: {fileID: 6688894064485113489, guid: d6e063a0d29891e4a9b4aca5648e152b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6688894064485113489, guid: d6e063a0d29891e4a9b4aca5648e152b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6688894064485113489, guid: d6e063a0d29891e4a9b4aca5648e152b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 3.96
+      objectReference: {fileID: 0}
+    - target: {fileID: 6688894064485113489, guid: d6e063a0d29891e4a9b4aca5648e152b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7854856
+      objectReference: {fileID: 0}
+    - target: {fileID: 6688894064485113489, guid: d6e063a0d29891e4a9b4aca5648e152b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6688894064485113489, guid: d6e063a0d29891e4a9b4aca5648e152b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.61888
+      objectReference: {fileID: 0}
+    - target: {fileID: 6688894064485113489, guid: d6e063a0d29891e4a9b4aca5648e152b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6688894064485113489, guid: d6e063a0d29891e4a9b4aca5648e152b, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 27.74
+      objectReference: {fileID: 0}
+    - target: {fileID: 6688894064485113489, guid: d6e063a0d29891e4a9b4aca5648e152b, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 4.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 6688894064485113489, guid: d6e063a0d29891e4a9b4aca5648e152b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6688894064485113489, guid: d6e063a0d29891e4a9b4aca5648e152b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 76.469
+      objectReference: {fileID: 0}
+    - target: {fileID: 6688894064485113489, guid: d6e063a0d29891e4a9b4aca5648e152b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d6e063a0d29891e4a9b4aca5648e152b, type: 3}
 --- !u!1 &1816081738
 GameObject:
   m_ObjectHideFlags: 0
@@ -4836,3 +4967,4 @@ SceneRoots:
   - {fileID: 2340072452686723149}
   - {fileID: 1104311058}
   - {fileID: 1724402503}
+  - {fileID: 1787129514}
