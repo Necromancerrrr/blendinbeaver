@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class SwingingArmLocomotion : MonoBehaviour
+public class Player : MonoBehaviour
 {
 
     public bool blendingIn = false;

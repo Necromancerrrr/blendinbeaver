@@ -8,7 +8,7 @@ public class AgentBehaviour : MonoBehaviour
     private Animator animator;
     private NavMeshAgent agent;
     
-    public SwingingArmLocomotion BlendIn;
+    public Player BlendIn;
     public FieldOfView inFOV;
    
     

@@ -16,4 +16,15 @@ public class StickBag : MonoBehaviour
     {
         
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Collectable")
+        {
+
+            //animate it getting smaller?
+            Destroy(collision.gameObject);
+            Instantiate(collision.gameObject, new Vector3(0, 1, 0), Quaternion.identity);
+        }
+    }
 }
