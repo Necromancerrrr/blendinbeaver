@@ -4486,6 +4486,14 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 6065122218538626398, guid: abcc352486d271f4c85ac218b931ce6e, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 6.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6065122218538626398, guid: abcc352486d271f4c85ac218b931ce6e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 3.4
+      objectReference: {fileID: 0}
     - target: {fileID: 6831105132742406930, guid: abcc352486d271f4c85ac218b931ce6e, type: 3}
       propertyPath: m_Layer
       value: 0
