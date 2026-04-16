@@ -10,6 +10,7 @@ public class AgentBehaviour : MonoBehaviour
     
     public Player BlendIn;
     public FieldOfView inFOV;
+    public CharacterTextBox growl;
    
     
     private void Start()
@@ -22,6 +23,8 @@ public class AgentBehaviour : MonoBehaviour
         if (!BlendIn.blendingIn && inFOV.playerInSight)
             // if the player is not blending in and is in the bear's FOV
         {
+            growl.SetText("GRRR!", 5.0f);
+
             agent.isStopped = false;
             agent.SetDestination(Camera.main.transform.position);
             animator.SetFloat("Speed", agent.velocity.magnitude);
@@ -44,6 +47,7 @@ public class AgentBehaviour : MonoBehaviour
             //wait for 2 seconds then move randomly
             //WaitForSeconds wait = new WaitForSeconds(2f);
             print("BEAR MOVING RANDOMLY"); //debug
+            
 
         }
 
@@ -56,7 +60,8 @@ public class AgentBehaviour : MonoBehaviour
 
             //move randomly placeholder
             agent.isStopped = false;
-   
+            
+
         }
 
 
