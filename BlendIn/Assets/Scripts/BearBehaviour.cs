@@ -22,7 +22,7 @@ public class AgentBehaviour : MonoBehaviour
         if (!BlendIn.blendingIn && inFOV.playerInSight)
             // if the player is not blending in and is in the bear's FOV
         {
-            
+            agent.isStopped = false;
             agent.SetDestination(Camera.main.transform.position);
             animator.SetFloat("Speed", agent.velocity.magnitude);
 
@@ -42,7 +42,7 @@ public class AgentBehaviour : MonoBehaviour
             print("BEAR STOPPING"); //debug 
 
             //wait for 2 seconds then move randomly
-            WaitForSeconds wait = new WaitForSeconds(2f);
+            //WaitForSeconds wait = new WaitForSeconds(2f);
             print("BEAR MOVING RANDOMLY"); //debug
 
         }
