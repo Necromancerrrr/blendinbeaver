@@ -7,7 +7,7 @@ public class AgentBehaviour : MonoBehaviour
     private Animator animator;
     private NavMeshAgent agent;
     
-    public SwingingArmMotion BlendIn;
+    public SwingingArmLocomotion BlendIn;
    
     
     private void Start()

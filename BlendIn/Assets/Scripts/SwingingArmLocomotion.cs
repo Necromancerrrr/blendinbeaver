@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class SwingingArmMotion : MonoBehaviour
+public class SwingingArmLocomotion : MonoBehaviour
 {
 
     public bool blendingIn = false;
@@ -97,10 +97,14 @@ public class SwingingArmMotion : MonoBehaviour
         if (leftDistance <= 0.2f && rightDistance <= 0.2f)
         {
             blendingIn = true;
+
+            print("BLENDING IN");
         }
         else
         {
             blendingIn = false;
+
+            print("NOT BLENDING IN");
         }
     }
 }
