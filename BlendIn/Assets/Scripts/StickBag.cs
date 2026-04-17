@@ -13,6 +13,10 @@ public class StickBag : MonoBehaviour
 
     [SerializeField] private GameObject testBranch;
 
+    [SerializeField] private GameObject stick1;
+    [SerializeField] private GameObject stick2;
+    [SerializeField] private GameObject stick3;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -23,13 +27,25 @@ public class StickBag : MonoBehaviour
     {
         if (collision.gameObject.tag == "Collectable")
         {
-            player.score += 10;
+            //replace this if else with a for loop and have all sticks in a list/array
+            if (collision.gameObject.name[0] == 'L')
+            {
+                player.score += 10;
+            }
+            else if (collision.gameObject.name[0] == 'M')
+            {
+                player.score += 20;
+            }
+            else if (collision.gameObject.name[0] == 'H')
+            {
+                player.score += 30;
+            }
+
             leftHandScore.text = player.score.ToString();
             rightHandScore.text = player.score.ToString();
 
             //animate it getting smaller?
             Destroy(collision.gameObject);
-            Instantiate(testBranch, new Vector3(1, 1, 1), Quaternion.identity);
         }
     }
 }
