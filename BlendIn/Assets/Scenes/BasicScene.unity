@@ -1000,6 +1000,8 @@ Transform:
   - {fileID: 5519801}
   - {fileID: 1087291048}
   - {fileID: 35324087}
+  - {fileID: 672999505}
+  - {fileID: 1639202273}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &189905058
@@ -1059,6 +1061,132 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 95daae37c573e3147a2f9013adaaae0c, type: 3}
+--- !u!1001 &230663344
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 2016418354}
+    m_Modifications:
+    - target: {fileID: 258815742623577873, guid: d6e063a0d29891e4a9b4aca5648e152b, type: 3}
+      propertyPath: m_text
+      value: PIPER JARVINEN
+      objectReference: {fileID: 0}
+    - target: {fileID: 1947047712583178125, guid: d6e063a0d29891e4a9b4aca5648e152b, type: 3}
+      propertyPath: m_text
+      value: "Modelled by Meagan.\n\nMore information on Ted in the 'building'. \n\nThis
+        version of Ted gives the player instructions."
+      objectReference: {fileID: 0}
+    - target: {fileID: 2409310231579350215, guid: d6e063a0d29891e4a9b4aca5648e152b, type: 3}
+      propertyPath: m_Name
+      value: Piper's UI Panel_Ted_Start
+      objectReference: {fileID: 0}
+    - target: {fileID: 4097995803815591652, guid: d6e063a0d29891e4a9b4aca5648e152b, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6153180925603174797, guid: d6e063a0d29891e4a9b4aca5648e152b, type: 3}
+      propertyPath: m_text
+      value: 'Ted [NPC]'
+      objectReference: {fileID: 0}
+    - target: {fileID: 6688894064485113489, guid: d6e063a0d29891e4a9b4aca5648e152b, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6688894064485113489, guid: d6e063a0d29891e4a9b4aca5648e152b, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6688894064485113489, guid: d6e063a0d29891e4a9b4aca5648e152b, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6688894064485113489, guid: d6e063a0d29891e4a9b4aca5648e152b, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6688894064485113489, guid: d6e063a0d29891e4a9b4aca5648e152b, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6688894064485113489, guid: d6e063a0d29891e4a9b4aca5648e152b, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6688894064485113489, guid: d6e063a0d29891e4a9b4aca5648e152b, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 800
+      objectReference: {fileID: 0}
+    - target: {fileID: 6688894064485113489, guid: d6e063a0d29891e4a9b4aca5648e152b, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 600
+      objectReference: {fileID: 0}
+    - target: {fileID: 6688894064485113489, guid: d6e063a0d29891e4a9b4aca5648e152b, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.000083902254
+      objectReference: {fileID: 0}
+    - target: {fileID: 6688894064485113489, guid: d6e063a0d29891e4a9b4aca5648e152b, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.00008390226
+      objectReference: {fileID: 0}
+    - target: {fileID: 6688894064485113489, guid: d6e063a0d29891e4a9b4aca5648e152b, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.00008390227
+      objectReference: {fileID: 0}
+    - target: {fileID: 6688894064485113489, guid: d6e063a0d29891e4a9b4aca5648e152b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6688894064485113489, guid: d6e063a0d29891e4a9b4aca5648e152b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6688894064485113489, guid: d6e063a0d29891e4a9b4aca5648e152b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.020142283
+      objectReference: {fileID: 0}
+    - target: {fileID: 6688894064485113489, guid: d6e063a0d29891e4a9b4aca5648e152b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.15610647
+      objectReference: {fileID: 0}
+    - target: {fileID: 6688894064485113489, guid: d6e063a0d29891e4a9b4aca5648e152b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.15368702
+      objectReference: {fileID: 0}
+    - target: {fileID: 6688894064485113489, guid: d6e063a0d29891e4a9b4aca5648e152b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.6973424
+      objectReference: {fileID: 0}
+    - target: {fileID: 6688894064485113489, guid: d6e063a0d29891e4a9b4aca5648e152b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.6824403
+      objectReference: {fileID: 0}
+    - target: {fileID: 6688894064485113489, guid: d6e063a0d29891e4a9b4aca5648e152b, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.04781831
+      objectReference: {fileID: 0}
+    - target: {fileID: 6688894064485113489, guid: d6e063a0d29891e4a9b4aca5648e152b, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.006526768
+      objectReference: {fileID: 0}
+    - target: {fileID: 6688894064485113489, guid: d6e063a0d29891e4a9b4aca5648e152b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6688894064485113489, guid: d6e063a0d29891e4a9b4aca5648e152b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 179.372
+      objectReference: {fileID: 0}
+    - target: {fileID: 6688894064485113489, guid: d6e063a0d29891e4a9b4aca5648e152b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d6e063a0d29891e4a9b4aca5648e152b, type: 3}
 --- !u!1 &255333151
 GameObject:
   m_ObjectHideFlags: 0
@@ -3136,12 +3264,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 672999501}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 41.49231, y: 0.371, z: 0.13299724}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 38.712223, y: -4.365632, z: 1.9955318}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 128204082}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &686337315 stripped
 GameObject:
@@ -6138,6 +6266,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1424956607}
   m_CullTransparentMesh: 1
+--- !u!224 &1556760272 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 6688894064485113489, guid: d6e063a0d29891e4a9b4aca5648e152b, type: 3}
+  m_PrefabInstance: {fileID: 230663344}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1596654749
 GameObject:
   m_ObjectHideFlags: 0
@@ -6457,12 +6590,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1639202269}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 39.859, y: 0.371, z: 9.38}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 37.078915, y: -4.365632, z: 11.242535}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 128204082}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1646155077
 PrefabInstance:
@@ -7144,7 +7277,10 @@ PrefabInstance:
 
         I
         followed YouTube tutorials [cited in script] to create a field of vision
-        for the bear, it will aggro once the player enters its FOV.'
+        for the bear, it will aggro once the player enters its FOV.
+
+        Blend
+        in, and the bear will lose sight of you.'
       objectReference: {fileID: 0}
     - target: {fileID: 2409310231579350215, guid: d6e063a0d29891e4a9b4aca5648e152b, type: 3}
       propertyPath: m_Name
@@ -8142,6 +8278,11 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!4 &2016418354 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 489468384775424270, guid: d072b5a1f0ce02449b8b8241fda4c157, type: 3}
+  m_PrefabInstance: {fileID: 4179514606474161854}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2018717135 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4595090473785504568, guid: 65f11b9a5bd8f8945895975beba76a6e, type: 3}
@@ -8875,7 +9016,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4595090473785504568, guid: 65f11b9a5bd8f8945895975beba76a6e, type: 3}
       propertyPath: m_Name
-      value: Bear_Prefab
+      value: Bear
       objectReference: {fileID: 0}
     - target: {fileID: 4595090473785504568, guid: 65f11b9a5bd8f8945895975beba76a6e, type: 3}
       propertyPath: m_IsActive
@@ -8987,7 +9128,10 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 2645884908061194366, guid: d072b5a1f0ce02449b8b8241fda4c157, type: 3}
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 489468384775424270, guid: d072b5a1f0ce02449b8b8241fda4c157, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1556760272}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 973094503296701364, guid: d072b5a1f0ce02449b8b8241fda4c157, type: 3}
       insertIndex: -1
@@ -9135,8 +9279,6 @@ SceneRoots:
   - {fileID: 189905058}
   - {fileID: 23910555}
   - {fileID: 641607082}
-  - {fileID: 672999505}
-  - {fileID: 1639202273}
   - {fileID: 56776967}
   - {fileID: 4179514606474161854}
   - {fileID: 2091619696}
