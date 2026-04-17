@@ -675,8 +675,8 @@ PrefabInstance:
 
 
         Scoring
-        uses a tag based system to detect objects & uses name of the object to determine
-        score.
+        uses a tag based system to detect objects & uses the name of the object to
+        determine score. Score is shown on both wrists of the player.
 
 
 '
