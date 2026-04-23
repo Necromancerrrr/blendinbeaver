@@ -1189,7 +1189,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: HI
+  m_text: 0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1198,8 +1198,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1289,7 +1289,7 @@ Transform:
   m_GameObject: {fileID: 2137509334150114718}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.4, y: 0.7474399, z: 0.05}
+  m_LocalPosition: {x: -0.3, y: 0.7474399, z: 0}
   m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -1386,6 +1386,9 @@ MonoBehaviour:
   leftHandScore: {fileID: 2510071453985106671}
   rightHandScore: {fileID: 1781134028209618397}
   testBranch: {fileID: 5504527063581437300, guid: 060abcfa8ffe99344b166f83f9db7820, type: 3}
+  stick1: {fileID: 2783821773511260788, guid: b9fd0c3afc163af46b93fa05e15b44a8, type: 3}
+  stick2: {fileID: 4280321357611734900, guid: 4651931338c9d034395bad7c2f80c886, type: 3}
+  stick3: {fileID: 2012309083249257523, guid: 95daae37c573e3147a2f9013adaaae0c, type: 3}
 --- !u!1 &2190828208922718286
 GameObject:
   m_ObjectHideFlags: 0
@@ -2410,7 +2413,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: HI
+  m_text: 0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2419,8 +2422,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
