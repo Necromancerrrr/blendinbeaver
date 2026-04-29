@@ -17,6 +17,9 @@ public class StickBag : MonoBehaviour
     [SerializeField] private GameObject stick2;
     [SerializeField] private GameObject stick3;
 
+
+    [SerializeField] private StickSpawner stickSpawner;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -28,15 +31,15 @@ public class StickBag : MonoBehaviour
         if (collision.gameObject.tag == "Collectable")
         {
             //replace this if else with a for loop and have all sticks in a list/array
-            if (collision.gameObject.name[0] == 'L')
+            if (collision.gameObject.name[0] == 'L') // Low
             {
                 player.score += 10;
             }
-            else if (collision.gameObject.name[0] == 'M')
+            else if (collision.gameObject.name[0] == 'M') // Medium
             {
                 player.score += 20;
             }
-            else if (collision.gameObject.name[0] == 'H')
+            else if (collision.gameObject.name[0] == 'H') // High
             {
                 player.score += 30;
             }
@@ -46,6 +49,8 @@ public class StickBag : MonoBehaviour
 
             //animate it getting smaller?
             Destroy(collision.gameObject);
+
+            stickSpawner.numberOfSticks -= 1;
         }
     }
 }
