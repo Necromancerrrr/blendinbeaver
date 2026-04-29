@@ -934,6 +934,7 @@ GameObject:
   - component: {fileID: 5826056641483426609}
   - component: {fileID: 5033801203051696737}
   - component: {fileID: 2384625035704376712}
+  - component: {fileID: 7801381996088314083}
   m_Layer: 2
   m_Name: XR Origin (XR Rig)
   m_TagString: Untagged
@@ -1093,6 +1094,29 @@ MonoBehaviour:
   ForwardDirection: {fileID: 8353543168606349900}
   Speed: 120
   HandSpeed: 0
+--- !u!136 &7801381996088314083
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1717954561962503725}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Radius: 0.25
+  m_Height: 1.5
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.8, z: 0}
 --- !u!1 &1787516059220952802
 GameObject:
   m_ObjectHideFlags: 0
@@ -1389,6 +1413,7 @@ MonoBehaviour:
   stick1: {fileID: 2783821773511260788, guid: b9fd0c3afc163af46b93fa05e15b44a8, type: 3}
   stick2: {fileID: 4280321357611734900, guid: 4651931338c9d034395bad7c2f80c886, type: 3}
   stick3: {fileID: 2012309083249257523, guid: 95daae37c573e3147a2f9013adaaae0c, type: 3}
+  stickSpawner: {fileID: 0}
 --- !u!1 &2190828208922718286
 GameObject:
   m_ObjectHideFlags: 0
@@ -1852,7 +1877,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7951184429302108679
 Transform:
   m_ObjectHideFlags: 0

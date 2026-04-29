@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -56,6 +57,18 @@ public class Player : MonoBehaviour
         else
         {
             ControllerDistance(PositionCurrentFrameLeftHand, PositionCurrentFrameRightHand);
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        print("COLLIDED");
+        if (other.gameObject.layer == 9)
+        {
+            
+            print("Player is dead");
+
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
 
