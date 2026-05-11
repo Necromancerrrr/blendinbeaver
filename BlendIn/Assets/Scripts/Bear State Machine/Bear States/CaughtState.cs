@@ -9,6 +9,8 @@ public class BearCaughtState : BearState
 
     public override void EnterState()
     {
+        Debug.Log("Entered Caught");
+
         base.EnterState();
 
         bear.agent.isStopped = true; // TEMPORARY, REMOVE WHEN LOGIC IS PUT IN

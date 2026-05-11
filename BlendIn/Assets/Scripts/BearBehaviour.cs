@@ -80,7 +80,7 @@ public class AgentBehaviour : MonoBehaviour
             print("CHASING BEE"); //debug
             
         }
-        */
+        
 
         if (!BlendIn.blendingIn && inFOV.playerInSight)
             // if the player is not blending in and is in the bear's FOV
@@ -125,9 +125,9 @@ public class AgentBehaviour : MonoBehaviour
 
             
         }
-
+        */
 
     }
 
-  
+
 }

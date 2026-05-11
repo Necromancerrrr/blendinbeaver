@@ -10,6 +10,8 @@ public class BearFleeState : BearState
 
     public override void EnterState()
     {
+        Debug.Log("Entered Flee");
+
         base.EnterState();
         timer = 0;
 

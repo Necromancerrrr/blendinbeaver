@@ -8,6 +8,8 @@ public class BearChaseState : BearState
 
     public override void EnterState()
     {
+        Debug.Log("Entered Chase");
+
         base.EnterState();
 
     }

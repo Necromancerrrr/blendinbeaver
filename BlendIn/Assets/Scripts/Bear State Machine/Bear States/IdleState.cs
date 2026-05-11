@@ -12,6 +12,8 @@ public class BearIdleState : BearState
 
     public override void EnterState()
     {
+        Debug.Log("Entered Idle");
+
         base.EnterState();
         timer = 0;
 

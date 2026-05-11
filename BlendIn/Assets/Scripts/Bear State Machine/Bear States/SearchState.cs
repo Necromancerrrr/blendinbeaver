@@ -10,6 +10,8 @@ public class BearSearchState : BearState
 
     public override void EnterState()
     {
+        Debug.Log("Entered Search");
+
         base.EnterState();
         timer = 0;
 

@@ -8,6 +8,8 @@ public class BearWanderState : BearState
 
     public override void EnterState()
     {
+        Debug.Log("Entered Wander");
+
         base.EnterState();
 
         bear.agent.isStopped = true; // TEMPORARY, REMOVE WHEN LOGIC IS PUT IN
