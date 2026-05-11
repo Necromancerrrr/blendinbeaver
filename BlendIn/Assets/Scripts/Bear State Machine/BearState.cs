@@ -47,5 +47,10 @@ public class BearState : MonoBehaviour
     public virtual void TransitionChecks()
     {
         //isAnimationFinished = true;
+
+        if (bear.beeCollision)  // if beehive nearby FLEE
+        {
+            bearStateMachine.ChangeState(bear.FleeState);
+        }
     }
 }

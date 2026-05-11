@@ -1,14 +1,15 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class BearWanderState : BearState
+public class BearCaughtState : BearState
 {
-    public BearWanderState(AgentBehaviour bear, BearStateMachine bearStateMachine, string animationName, Animator animationController) : base(bear, bearStateMachine, animationName, animationController)
+    public BearCaughtState(AgentBehaviour bear, BearStateMachine bearStateMachine, string animationName, Animator animationController) : base(bear, bearStateMachine, animationName, animationController)
     {
     }
 
     public override void EnterState()
     {
-        Debug.Log("Entered Wander");
+        Debug.Log("Entered Caught");
 
         base.EnterState();
 
@@ -34,10 +35,5 @@ public class BearWanderState : BearState
     public override void TransitionChecks()
     {
         base.TransitionChecks();
-
-        if (!bear.BlendIn.blendingIn && bear.inFOV.playerInSight) // if spotted player go to CHASE
-        {
-            bearStateMachine.ChangeState(bear.ChaseState);
-        }
     }
 }

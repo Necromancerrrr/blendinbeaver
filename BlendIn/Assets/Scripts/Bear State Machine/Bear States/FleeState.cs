@@ -6,10 +6,16 @@ public class BearFleeState : BearState
     {
     }
 
+    float timer;
+
     public override void EnterState()
     {
-        base.EnterState();
+        Debug.Log("Entered Flee");
 
+        base.EnterState();
+        timer = 0;
+
+        bear.agent.isStopped = true; // TEMPORARY, REMOVE WHEN LOGIC IS PUT IN
     }
 
     public override void ExitState()
@@ -19,6 +25,8 @@ public class BearFleeState : BearState
 
     public override void FrameUpdate()
     {
+        timer += Time.deltaTime;
+
         base.FrameUpdate();
     }
 
@@ -31,5 +39,10 @@ public class BearFleeState : BearState
     public override void TransitionChecks()
     {
         base.TransitionChecks();
+
+        if (timer >= 3) // after x seconds go to IDLE
+        {
+            bearStateMachine.ChangeState(bear.IdleState);
+        }
     }
 }

@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.Playables;
 
-public class BearStateMachine : MonoBehaviour
+public class BearStateMachine
 {
     public BearState CurrentState;
 
