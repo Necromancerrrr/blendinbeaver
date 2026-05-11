@@ -37,7 +37,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -0.015575409, y: 0.03338027}
+  m_AnchoredPosition: {x: -0.015575409, y: 0.05}
   m_SizeDelta: {x: 1533, y: 381}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &953863194438339447
@@ -330,7 +330,7 @@ GameObject:
   - component: {fileID: 1451351701779574741}
   - component: {fileID: 7424858495430651121}
   - component: {fileID: 3664788691960493103}
-  - component: {fileID: 3871266819273505291}
+  - component: {fileID: 1421948428006987883}
   m_Layer: 0
   m_Name: Bear_Prefab
   m_TagString: Untagged
@@ -386,7 +386,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 6ef1b0b1181c15e4f9d789b41f9b0e35, type: 2}
+  - {fileID: 2100000, guid: 9d59546f73750304c98b46328ba3f6cd, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -491,8 +491,8 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!136 &3871266819273505291
-CapsuleCollider:
+--- !u!64 &1421948428006987883
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -509,11 +509,10 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.040762983
-  m_Height: 0.045437526
-  m_Direction: 1
-  m_Center: {x: -0.009148542, y: 0.00017852336, z: 0.00040539162}
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 3838709392123257655, guid: 23a805c03931c7f46b2c12acb40e2e05, type: 3}
 --- !u!1 &8706128058013063955
 GameObject:
   m_ObjectHideFlags: 0
