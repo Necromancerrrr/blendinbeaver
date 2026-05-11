@@ -23,6 +23,7 @@ public class BearChaseState : BearState
     {
         base.FrameUpdate();
 
+
         bear.growl.SetText("GRRR!", 5.0f);
 
         bear.agent.isStopped = false;
