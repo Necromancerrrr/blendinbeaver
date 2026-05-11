@@ -6,10 +6,12 @@ public class BearFleeState : BearState
     {
     }
 
+    float timer;
+
     public override void EnterState()
     {
         base.EnterState();
-
+        timer = 0;
     }
 
     public override void ExitState()
@@ -19,6 +21,8 @@ public class BearFleeState : BearState
 
     public override void FrameUpdate()
     {
+        timer += Time.deltaTime;
+
         base.FrameUpdate();
     }
 
@@ -31,5 +35,10 @@ public class BearFleeState : BearState
     public override void TransitionChecks()
     {
         base.TransitionChecks();
+
+        if (timer >= 3) // after x seconds go to IDLE
+        {
+            bearStateMachine.ChangeState(bear.IdleState);
+        }
     }
 }

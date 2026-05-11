@@ -4,22 +4,69 @@ using UnityEngine.AI;
 [RequireComponent(typeof(NavMeshAgent))]
 public class AgentBehaviour : MonoBehaviour
 {
-    
-    private Animator animator;
-    private NavMeshAgent agent;
-    
+
+    [HideInInspector] public Animator animator;
+    [HideInInspector] public NavMeshAgent agent;
+
+    [HideInInspector] public bool beeCollision;
+
     public Player BlendIn;
     public FieldOfView inFOV;
     public CharacterTextBox growl;
-   
-    
+
+
+    public BearStateMachine StateMachine;
+
+    public BearIdleState IdleState;
+
+    public BearFleeState FleeState;
+
+    public BearSearchState SearchState;
+
+    public BearChaseState ChaseState;
+
+    public BearWanderState WanderState;
+
+    public BearCaughtState CaughtState;
+
+
+    private void Awake()
+    {
+        StateMachine = new BearStateMachine();
+
+        IdleState = new BearIdleState(this, StateMachine, null, null);
+
+        FleeState = new BearFleeState(this, StateMachine, null, null);
+
+        SearchState = new BearSearchState(this, StateMachine, null, null);
+
+        ChaseState = new BearChaseState(this, StateMachine, null, null);
+
+        WanderState = new BearWanderState(this, StateMachine, null, null);
+
+        CaughtState = new BearCaughtState(this, StateMachine, null, null);
+    }
+
     private void Start()
     {
         animator = GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.layer == 10) // if collided with beehive
+        {
+            beeCollision = true;
+
+            other.gameObject.SetActive(false); // no more bees on the beehive
+        }
+    }
+
     void Update()
     {
+        StateMachine.CurrentState.FrameUpdate();
+        /*
         if (inFOV.isBeehive && inFOV.playerInSight)
         {
             growl.SetText("GRRR!", 5.0f);
@@ -33,8 +80,9 @@ public class AgentBehaviour : MonoBehaviour
             print("CHASING BEE"); //debug
             
         }
+        */
 
-        if (!BlendIn.blendingIn && inFOV.playerInSight && !inFOV.isBeehive)
+        if (!BlendIn.blendingIn && inFOV.playerInSight)
             // if the player is not blending in and is in the bear's FOV
         {
             growl.SetText("GRRR!", 5.0f);
@@ -49,7 +97,7 @@ public class AgentBehaviour : MonoBehaviour
             
         }
         
-        if (BlendIn.blendingIn && inFOV.playerInSight && !inFOV.isBeehive)
+        if (BlendIn.blendingIn && inFOV.playerInSight)
             // if the player is blending in and is still in the bear's FOV
         {
             print("BEAR CAN SEE ME BLENDING IN"); //debug
@@ -67,7 +115,7 @@ public class AgentBehaviour : MonoBehaviour
 
         // this can just be else but I'm trying to debug! 
 
-        if (!BlendIn.blendingIn && !inFOV.playerInSight && !inFOV.isBeehive)
+        if (!BlendIn.blendingIn && !inFOV.playerInSight)
                 // if the player is not blending in and is not in sight of the bear
         {
             print("BEAR CAN'T SEE ME AND IS WANDERING"); //debug

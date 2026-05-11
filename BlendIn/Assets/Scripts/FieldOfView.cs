@@ -19,7 +19,6 @@ public class FieldOfView : MonoBehaviour
 
     // is the player in sight?
     public bool playerInSight;
-    public bool isBeehive;
     public Transform objectHunted;
 
     private void Start()
@@ -47,7 +46,6 @@ public class FieldOfView : MonoBehaviour
         if (rangeChecks.Length != 0)
         {
             Transform target = rangeChecks[0].transform;
-            isBeehive = false;
 
             objectHunted = target;
 
@@ -56,7 +54,6 @@ public class FieldOfView : MonoBehaviour
                 print(collider.gameObject.name);
                 if (collider.gameObject.name == "Beehive")
                 {
-                    isBeehive = true;
                     target = collider.transform;
                     objectHunted = target;
                     return;

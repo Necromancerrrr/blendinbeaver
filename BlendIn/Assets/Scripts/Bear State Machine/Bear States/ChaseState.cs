@@ -20,6 +20,16 @@ public class BearChaseState : BearState
     public override void FrameUpdate()
     {
         base.FrameUpdate();
+
+        bear.growl.SetText("GRRR!", 5.0f);
+
+        bear.agent.isStopped = false;
+        bear.agent.SetDestination(bear.inFOV.objectHunted.position);
+        bear.animator.SetFloat("Speed", bear.agent.velocity.magnitude);
+
+        // bear chases player
+
+        print("CHASING"); //debug
     }
 
     public override void FixedUpdate()
@@ -31,5 +41,18 @@ public class BearChaseState : BearState
     public override void TransitionChecks()
     {
         base.TransitionChecks();
+
+        if (!bear.inFOV.playerInSight) // if lose track of player go to SEARCH
+        {
+            bearStateMachine.ChangeState(bear.SearchState);
+        }
+
+        if (bear.BlendIn.blendingIn && bear.inFOV.playerInSight) // if player disguise go to SEARCH
+        {
+            bearStateMachine.ChangeState(bear.SearchState);
+        }
+
+        // if caught player
+        //bearStateMachine.ChangeState(bear.CaughtState);
     }
 }

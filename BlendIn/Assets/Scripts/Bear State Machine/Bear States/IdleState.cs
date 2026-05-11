@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Rendering;
 using UnityEngine.SceneManagement;
 
 public class BearIdleState : BearState
@@ -7,10 +8,12 @@ public class BearIdleState : BearState
     {
     }
 
+    float timer;
+
     public override void EnterState()
     {
         base.EnterState();
-
+        timer = 0;
     }
 
     public override void ExitState()
@@ -20,6 +23,8 @@ public class BearIdleState : BearState
 
     public override void FrameUpdate()
     {
+        timer += Time.deltaTime;
+
         base.FrameUpdate();
     }
 
@@ -32,5 +37,15 @@ public class BearIdleState : BearState
     public override void TransitionChecks()
     {
         base.TransitionChecks();
+
+        if (!bear.BlendIn.blendingIn && bear.inFOV.playerInSight) // if spotted player go to CHASE
+        {
+            bearStateMachine.ChangeState(bear.ChaseState);
+        }
+
+        if (timer >= 3) // after x seconds go to WANDER
+        {
+            bearStateMachine.ChangeState(bear.WanderState);
+        }
     }
 }
