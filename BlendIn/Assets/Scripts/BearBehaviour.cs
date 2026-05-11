@@ -45,6 +45,8 @@ public class AgentBehaviour : MonoBehaviour
         WanderState = new BearWanderState(this, StateMachine, null, null);
 
         CaughtState = new BearCaughtState(this, StateMachine, null, null);
+
+        StateMachine.Initialise(IdleState);
     }
 
     private void Start()
