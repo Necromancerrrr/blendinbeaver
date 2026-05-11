@@ -14,6 +14,7 @@ public class AgentBehaviour : MonoBehaviour
     public FieldOfView inFOV;
     public CharacterTextBox growl;
 
+    #region State Machine Vars
 
     public BearStateMachine StateMachine;
 
@@ -29,9 +30,13 @@ public class AgentBehaviour : MonoBehaviour
 
     public BearCaughtState CaughtState;
 
+    #endregion
 
     private void Awake()
     {
+        animator = GetComponent<Animator>();
+        agent = GetComponent<NavMeshAgent>();
+
         StateMachine = new BearStateMachine();
 
         IdleState = new BearIdleState(this, StateMachine, null, null);
@@ -47,12 +52,6 @@ public class AgentBehaviour : MonoBehaviour
         CaughtState = new BearCaughtState(this, StateMachine, null, null);
 
         StateMachine.Initialise(IdleState);
-    }
-
-    private void Start()
-    {
-        animator = GetComponent<Animator>();
-        agent = GetComponent<NavMeshAgent>();
     }
 
     private void OnTriggerEnter(Collider other)
