@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 9368ecbf04ac793478f3820f5bfd283c
+guid: 853b4589c22d9874e8e09c635a3c90c2
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -7,8 +7,13 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: standardSurface1
-    second: {fileID: 2100000, guid: 355d3918f23bea2418385eb95a3f25ff, type: 2}
+      name: foliage
+    second: {fileID: 2100000, guid: 4602326236cc1414988ac1bacfabb1aa, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: trunk
+    second: {fileID: 2100000, guid: 902ef059962fdb44b9926b564adbdd57, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
