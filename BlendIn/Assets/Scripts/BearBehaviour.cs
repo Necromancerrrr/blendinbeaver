@@ -1,6 +1,7 @@
 using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.AI;
+
 [RequireComponent(typeof(NavMeshAgent))]
 public class AgentBehaviour : MonoBehaviour
 {
@@ -9,6 +10,9 @@ public class AgentBehaviour : MonoBehaviour
     [HideInInspector] public NavMeshAgent agent;
 
     [HideInInspector] public bool beeCollision;
+    [HideInInspector] public Transform[] beehiveTransforms = new Transform[7];
+    [HideInInspector] public int lastChosenBeehive = 0;
+
 
     public Player BlendIn;
     public FieldOfView inFOV;
@@ -37,6 +41,14 @@ public class AgentBehaviour : MonoBehaviour
         animator = GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();
 
+        GameObject[] beehives = GameObject.FindGameObjectsWithTag("Beehive");
+        
+        for (int i = 0; i < beehiveTransforms.Length; i++)
+        {
+            print(beehives[i].transform.position);
+            beehiveTransforms[i] = beehives[i].transform;
+        }
+        
         StateMachine = new BearStateMachine();
 
         IdleState = new BearIdleState(this, StateMachine, null, null);

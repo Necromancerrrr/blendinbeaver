@@ -8,7 +8,8 @@ public class BearIdleState : BearState
     {
     }
 
-    float timer;
+    private float timer;
+    private float timeInterval;
 
     public override void EnterState()
     {
@@ -16,6 +17,8 @@ public class BearIdleState : BearState
 
         base.EnterState();
         timer = 0;
+
+        timeInterval = Random.Range(2, 5); // 2 - 4 seconds of waiting doing nothing
 
         bear.agent.isStopped = true; // TEMPORARY, REMOVE WHEN LOGIC IS PUT IN
     }
@@ -49,7 +52,7 @@ public class BearIdleState : BearState
             bearStateMachine.ChangeState(bear.ChaseState);
         }
 
-        if (timer >= 3) // after x seconds go to WANDER
+        if (timer >= timeInterval) // after x seconds go to WANDER
         {
             bearStateMachine.ChangeState(bear.WanderState);
         }

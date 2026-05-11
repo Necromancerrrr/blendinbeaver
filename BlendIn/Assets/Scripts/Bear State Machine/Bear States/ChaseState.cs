@@ -30,8 +30,6 @@ public class BearChaseState : BearState
         bear.animator.SetFloat("Speed", bear.agent.velocity.magnitude);
 
         // bear chases player
-
-        print("CHASING"); //debug
     }
 
     public override void FixedUpdate()

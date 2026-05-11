@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class BearState : MonoBehaviour
+public class BearState
 {
     protected AgentBehaviour bear;
     protected BearStateMachine bearStateMachine;
