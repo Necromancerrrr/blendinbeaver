@@ -14,6 +14,8 @@ public class BearIdleState : BearState
     {
         base.EnterState();
         timer = 0;
+
+        bear.agent.isStopped = true; // TEMPORARY, REMOVE WHEN LOGIC IS PUT IN
     }
 
     public override void ExitState()
@@ -26,6 +28,8 @@ public class BearIdleState : BearState
         timer += Time.deltaTime;
 
         base.FrameUpdate();
+
+        
     }
 
     public override void FixedUpdate()

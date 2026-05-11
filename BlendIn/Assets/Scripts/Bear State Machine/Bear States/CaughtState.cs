@@ -11,6 +11,7 @@ public class BearCaughtState : BearState
     {
         base.EnterState();
 
+        bear.agent.isStopped = true; // TEMPORARY, REMOVE WHEN LOGIC IS PUT IN
     }
 
     public override void ExitState()

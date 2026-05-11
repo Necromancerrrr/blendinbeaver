@@ -12,6 +12,8 @@ public class BearSearchState : BearState
     {
         base.EnterState();
         timer = 0;
+
+        bear.agent.isStopped = true; // TEMPORARY, REMOVE WHEN LOGIC IS PUT IN
     }
 
     public override void ExitState()
