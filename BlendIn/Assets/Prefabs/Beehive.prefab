@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3785170006748958246}
   - component: {fileID: 1955444275800145561}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Beehive
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -99,7 +99,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2802591448810938101}
-  m_Mesh: {fileID: -5983238055574232277, guid: 05050cb5568df43459aab90f6830d44a, type: 3}
+  m_Mesh: {fileID: -5983238055574232277, guid: 344ed0a2c5dc525459739c7001b66841, type: 3}
 --- !u!23 &4776265955654078522
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -123,8 +123,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
-  - {fileID: 2100000, guid: 652dde6dbb273ae4e9c8cc43a7f5cc8c, type: 2}
+  - {fileID: 2100000, guid: 7b0377cf7a5fc614a97d61ee17abb896, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

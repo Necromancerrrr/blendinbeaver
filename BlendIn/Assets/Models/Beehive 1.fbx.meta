@@ -1,14 +1,9 @@
 fileFormatVersion: 2
-guid: 05050cb5568df43459aab90f6830d44a
+guid: 344ed0a2c5dc525459739c7001b66841
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Beehive
-    second: {fileID: 2100000, guid: 652dde6dbb273ae4e9c8cc43a7f5cc8c, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0
