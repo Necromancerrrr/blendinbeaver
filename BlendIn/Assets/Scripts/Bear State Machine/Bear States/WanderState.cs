@@ -6,13 +6,34 @@ public class BearWanderState : BearState
     {
     }
 
+    private Transform destination = null;
+    private float movementTimer;
+    private float timeIntervals;
+
     public override void EnterState()
     {
         Debug.Log("Entered Wander");
 
         base.EnterState();
 
-        bear.agent.isStopped = true; // TEMPORARY, REMOVE WHEN LOGIC IS PUT IN
+        bear.agent.isStopped = false;
+
+        movementTimer = 0;
+
+        timeIntervals = Random.Range(6, 11); // choose how long the bear will be moving towards this target, 6 - 10 seconds range
+
+        int randNum = Random.Range(0, 7); // choose a random beehive to travel to
+
+        while (randNum == bear.lastChosenBeehive) // stops same beehive being chosen twice in a row
+        {
+            randNum = Random.Range(0, 7);
+        }
+
+        bear.lastChosenBeehive = randNum;
+
+        destination = bear.beehiveTransforms[randNum];
+
+        // Debug.Log(destination);
     }
 
     public override void ExitState()
@@ -22,6 +43,15 @@ public class BearWanderState : BearState
 
     public override void FrameUpdate()
     {
+        movementTimer += Time.deltaTime;
+
+        bear.growl.SetText("I chill", 5.0f);
+
+        bear.agent.SetDestination(destination.position);
+        bear.animator.SetFloat("Speed", bear.agent.velocity.magnitude);
+
+        
+
         base.FrameUpdate();
     }
 
@@ -38,6 +68,16 @@ public class BearWanderState : BearState
         if (!bear.BlendIn.blendingIn && bear.inFOV.playerInSight) // if spotted player go to CHASE
         {
             bearStateMachine.ChangeState(bear.ChaseState);
+        }
+
+        if (movementTimer > timeIntervals)
+        {
+            bearStateMachine.ChangeState(bear.IdleState); // after x seconds go to IDLE
+        }
+
+        if (bear.transform.position == destination.position)
+        {
+            bearStateMachine.ChangeState(bear.IdleState); // after bear reaches beehive go to IDLE
         }
     }
 }

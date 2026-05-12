@@ -72,7 +72,7 @@ public class Player : MonoBehaviour
         }
     }
 
-    private void ArmSwingingMechanic( Vector3 PositionCurrentFrameLeftHand, Vector3 PositionCurrentFrameRightHand)
+    private void ArmSwingingMechanic(Vector3 PositionCurrentFrameLeftHand, Vector3 PositionCurrentFrameRightHand)
     {
         // get forward direction from the center eye camera and set it to the forward direction object
         float yRotation = LeftHand.transform.eulerAngles.y;
@@ -112,13 +112,13 @@ public class Player : MonoBehaviour
         {
             blendingIn = true;
 
-            print("BLENDING IN");
+            //print("BLENDING IN");
         }
         else
         {
             blendingIn = false;
 
-            print("NOT BLENDING IN");
+            //print("NOT BLENDING IN");
         }
     }
 }
