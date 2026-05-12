@@ -2220,6 +2220,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Beehive (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 3980363634351320505, guid: 05a207ab9347b864aaeffcd2d2b812a9, type: 3}
+      propertyPath: m_UseGravity
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7478234563946468459, guid: 05a207ab9347b864aaeffcd2d2b812a9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 32.135
@@ -4017,7 +4021,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4595090473785504568, guid: 1bcdef127bf1a3a41a4790c29557fa2f, type: 3}
       propertyPath: m_Name
-      value: Bear
+      value: f
       objectReference: {fileID: 0}
     - target: {fileID: 7424858495430651121, guid: 1bcdef127bf1a3a41a4790c29557fa2f, type: 3}
       propertyPath: BlendIn
