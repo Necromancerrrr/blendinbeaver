@@ -12,7 +12,9 @@ public class AgentBehaviour : MonoBehaviour
     [HideInInspector] public bool beeCollision;
     [HideInInspector] public Transform[] beehiveTransforms = new Transform[7];
     [HideInInspector] public int lastChosenBeehive = 0;
+    [HideInInspector] public Transform lastSeenPlayerPos;
 
+    [HideInInspector] public bool playerCaught;
 
     public Player BlendIn;
     public FieldOfView inFOV;
@@ -73,6 +75,10 @@ public class AgentBehaviour : MonoBehaviour
             beeCollision = true;
 
             other.gameObject.SetActive(false); // no more bees on the beehive
+        }
+        else if (other.gameObject.layer == 10)
+        {
+            playerCaught = true;
         }
     }
 

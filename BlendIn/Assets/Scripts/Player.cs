@@ -62,6 +62,7 @@ public class Player : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        /*
         print("COLLIDED");
         if (other.gameObject.layer == 9)
         {
@@ -70,6 +71,7 @@ public class Player : MonoBehaviour
 
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
+        */
     }
 
     private void ArmSwingingMechanic(Vector3 PositionCurrentFrameLeftHand, Vector3 PositionCurrentFrameRightHand)

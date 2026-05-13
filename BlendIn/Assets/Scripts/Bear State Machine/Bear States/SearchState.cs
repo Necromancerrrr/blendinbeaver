@@ -6,16 +6,16 @@ public class BearSearchState : BearState
     {
     }
 
-    float timer;
+    float transitionCheckTimer; // used to leave this state
+    float movementTimer; // used to determine when to change destination
 
     public override void EnterState()
     {
         Debug.Log("Entered Search");
 
         base.EnterState();
-        timer = 0;
-
-        bear.agent.isStopped = true; // TEMPORARY, REMOVE WHEN LOGIC IS PUT IN
+        transitionCheckTimer = 0;
+        movementTimer = 0;
     }
 
     public override void ExitState()
@@ -25,11 +25,24 @@ public class BearSearchState : BearState
 
     public override void FrameUpdate()
     {
-        timer += Time.deltaTime;
-
+        transitionCheckTimer += Time.deltaTime;
+        movementTimer += Time.deltaTime;
 
         base.FrameUpdate();
 
+        if (movementTimer >= 2)
+        {
+            Vector2 randomPos = Random.insideUnitCircle * 10;
+
+            while (Vector2.Distance(randomPos, new Vector2(0f, 0f)) <= 2) // while the circle is within 2 of the origin randomise again
+            {
+                randomPos = Random.insideUnitCircle * 10;
+            }
+            
+            bear.agent.SetDestination(bear.lastSeenPlayerPos.position + new Vector3(randomPos.x, bear.transform.position.y, randomPos.y));
+            movementTimer = 0;
+        }
+        
         // move around last area player was spotted
     }
 
@@ -48,7 +61,7 @@ public class BearSearchState : BearState
             bearStateMachine.ChangeState(bear.ChaseState);
         }
 
-        if (timer >= 3) // if no player after x seconds go to IDLE
+        if (transitionCheckTimer >= 6) // if no player after x seconds go to IDLE
         {
             bearStateMachine.ChangeState(bear.IdleState);
         }

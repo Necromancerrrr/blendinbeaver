@@ -23,12 +23,14 @@ public class BearChaseState : BearState
     {
         base.FrameUpdate();
 
-
+        
         bear.growl.SetText("GRRR!", 5.0f);
 
         bear.agent.isStopped = false;
         bear.agent.SetDestination(bear.inFOV.objectHunted.position);
         bear.animator.SetFloat("Speed", bear.agent.velocity.magnitude);
+
+        bear.lastSeenPlayerPos = bear.inFOV.objectHunted; // get pos of last point bear as seen player
 
         // bear chases player
     }
@@ -53,7 +55,9 @@ public class BearChaseState : BearState
             bearStateMachine.ChangeState(bear.SearchState);
         }
 
-        // if caught player
-        //bearStateMachine.ChangeState(bear.CaughtState);
+        if (bear.playerCaught) // if player caught go to CAUGHT
+        {
+            bearStateMachine.ChangeState(bear.CaughtState);
+        }
     }
 }

@@ -48,7 +48,7 @@ public class FieldOfView : MonoBehaviour
             Transform target = rangeChecks[0].transform;
 
             objectHunted = target;
-
+            /*
             foreach (Collider collider in rangeChecks)
             {
                 print(collider.gameObject.name);
@@ -60,7 +60,7 @@ public class FieldOfView : MonoBehaviour
                 }
                 
             }
-
+            */
             Vector3 directionToTarget = (target.position - transform.position).normalized;
 
             if (Vector3.Angle(transform.forward, directionToTarget) < viewAngle / 2)
@@ -69,11 +69,14 @@ public class FieldOfView : MonoBehaviour
 
                 // if the bear can see the player
                 if (!Physics.Raycast(transform.position, directionToTarget, distanceToTarget, obstacleMask))
-                
+                {
                     playerInSight = true;
-
+                }
                 else
+                {
                     playerInSight = false;
+                }
+                    
 
             }
           
