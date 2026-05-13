@@ -7,15 +7,23 @@ public class BearFleeState : BearState
     }
 
     float timer;
+    int randPosMin;
 
     public override void EnterState()
     {
         Debug.Log("Entered Flee");
 
         base.EnterState();
+        
         timer = 0;
 
-        bear.agent.isStopped = true; // TEMPORARY, REMOVE WHEN LOGIC IS PUT IN
+        bear.beeCollision = false;
+
+        randPosMin = Random.Range(0, 2) * 2 - 1;
+
+        // Transform playerTransform = GameObject.FindGameObjectWithTag("Player").transform; use if it feels like the bear is getting too close to player
+
+        bear.agent.SetDestination(new Vector3(bear.transform.position.x + 30 * randPosMin, bear.transform.position.y, bear.transform.position.z + 30 * randPosMin));
     }
 
     public override void ExitState()
@@ -26,6 +34,8 @@ public class BearFleeState : BearState
     public override void FrameUpdate()
     {
         timer += Time.deltaTime;
+
+
 
         base.FrameUpdate();
     }
@@ -40,7 +50,7 @@ public class BearFleeState : BearState
     {
         base.TransitionChecks();
 
-        if (timer >= 3) // after x seconds go to IDLE
+        if (timer >= 8) // after x seconds go to IDLE
         {
             bearStateMachine.ChangeState(bear.IdleState);
         }

@@ -76,7 +76,7 @@ public class AgentBehaviour : MonoBehaviour
 
             other.gameObject.SetActive(false); // no more bees on the beehive
         }
-        else if (other.gameObject.layer == 10)
+        else if (other.gameObject.layer == 7)
         {
             playerCaught = true;
         }

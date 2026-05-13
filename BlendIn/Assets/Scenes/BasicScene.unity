@@ -4021,7 +4021,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4595090473785504568, guid: 1bcdef127bf1a3a41a4790c29557fa2f, type: 3}
       propertyPath: m_Name
-      value: f
+      value: bear
       objectReference: {fileID: 0}
     - target: {fileID: 7424858495430651121, guid: 1bcdef127bf1a3a41a4790c29557fa2f, type: 3}
       propertyPath: BlendIn
