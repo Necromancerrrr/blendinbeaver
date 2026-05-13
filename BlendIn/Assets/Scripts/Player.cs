@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
@@ -9,6 +10,7 @@ public class Player : MonoBehaviour
     public int score = 0;
     
     public bool blendingIn = false;
+    public bool isRunning = false;
 
     public InputActionReference leftTrigger;
     public InputActionReference rightTrigger;
@@ -20,6 +22,10 @@ public class Player : MonoBehaviour
     [SerializeField] private GameObject RightHand;
     [SerializeField] private GameObject MainCamera;
     [SerializeField] private GameObject ForwardDirection;
+    
+    [SerializeField] private NavMeshObstacle navMeshObstacle;
+
+    [SerializeField] private GameObject stickLocomotion;
 
     //Vector3 Positions
     private Vector3 PositionPreviousFrameLeftHand;
@@ -51,28 +57,22 @@ public class Player : MonoBehaviour
         {
             blendingIn = false;
             ArmSwingingMechanic(PositionCurrentFrameLeftHand, PositionCurrentFrameRightHand);
+            stickLocomotion.SetActive(false);
+
+            isRunning = true;
 
             print("RUNNING");
         }
         else
         {
+            isRunning = false;
+
+            
+
             ControllerDistance(PositionCurrentFrameLeftHand, PositionCurrentFrameRightHand);
         }
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        /*
-        print("COLLIDED");
-        if (other.gameObject.layer == 9)
-        {
-            
-            print("Player is dead");
-
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        }
-        */
-    }
 
     private void ArmSwingingMechanic(Vector3 PositionCurrentFrameLeftHand, Vector3 PositionCurrentFrameRightHand)
     {
@@ -113,13 +113,15 @@ public class Player : MonoBehaviour
         if (leftDistance <= 0.2f && rightDistance <= 0.2f)
         {
             blendingIn = true;
-
+            navMeshObstacle.enabled = true;
+            stickLocomotion.SetActive(false);
             //print("BLENDING IN");
         }
         else
         {
             blendingIn = false;
-
+            navMeshObstacle.enabled = false;
+            stickLocomotion.SetActive(true);
             //print("NOT BLENDING IN");
         }
     }

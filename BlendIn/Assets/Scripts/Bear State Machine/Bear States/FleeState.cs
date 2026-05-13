@@ -23,6 +23,8 @@ public class BearFleeState : BearState
 
         // Transform playerTransform = GameObject.FindGameObjectWithTag("Player").transform; use if it feels like the bear is getting too close to player
 
+        bear.growl.SetText("I SCARED!!", 5.0f);
+
         bear.agent.SetDestination(new Vector3(bear.transform.position.x + 30 * randPosMin, bear.transform.position.y, bear.transform.position.z + 30 * randPosMin));
     }
 

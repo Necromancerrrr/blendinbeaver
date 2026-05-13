@@ -45,7 +45,7 @@ public class AgentBehaviour : MonoBehaviour
 
         GameObject[] beehives = GameObject.FindGameObjectsWithTag("Beehive");
         
-        for (int i = 0; i < beehiveTransforms.Length; i++)
+        for (int i = 0; i < beehiveTransforms.Length; i++) // get all beehives
         {
             print(beehives[i].transform.position);
             beehiveTransforms[i] = beehives[i].transform;
@@ -76,10 +76,16 @@ public class AgentBehaviour : MonoBehaviour
 
             other.gameObject.SetActive(false); // no more bees on the beehive
         }
-        else if (other.gameObject.layer == 7)
+
+        if (other.gameObject.layer == 7)
         {
             playerCaught = true;
         }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        
     }
 
     void Update()

@@ -12,6 +12,8 @@ public class BearChaseState : BearState
 
         base.EnterState();
 
+        bear.growl.SetText("GRRR!", 5.0f);
+
     }
 
     public override void ExitState()
@@ -24,7 +26,7 @@ public class BearChaseState : BearState
         base.FrameUpdate();
 
         
-        bear.growl.SetText("GRRR!", 5.0f);
+        
 
         bear.agent.isStopped = false;
         bear.agent.SetDestination(bear.inFOV.objectHunted.position);

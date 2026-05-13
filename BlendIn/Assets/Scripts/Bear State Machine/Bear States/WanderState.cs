@@ -34,6 +34,8 @@ public class BearWanderState : BearState
         destination = bear.beehiveTransforms[randNum];
 
         // Debug.Log(destination);
+
+        bear.growl.SetText("I WANDER", 5.0f);
     }
 
     public override void ExitState()
@@ -45,7 +47,7 @@ public class BearWanderState : BearState
     {
         movementTimer += Time.deltaTime;
 
-        bear.growl.SetText("I chill", 5.0f);
+        
 
         bear.agent.SetDestination(destination.position);
         bear.animator.SetFloat("Speed", bear.agent.velocity.magnitude);

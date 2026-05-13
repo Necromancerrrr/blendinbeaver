@@ -20,7 +20,9 @@ public class BearIdleState : BearState
 
         timeInterval = Random.Range(2, 5); // 2 - 4 seconds of waiting doing nothing
 
-        bear.agent.isStopped = true; // TEMPORARY, REMOVE WHEN LOGIC IS PUT IN
+        bear.agent.isStopped = true; // do nothing
+
+        
     }
 
     public override void ExitState()
@@ -34,7 +36,7 @@ public class BearIdleState : BearState
 
         base.FrameUpdate();
 
-        
+        bear.growl.SetText("I STAND", 5.0f);
     }
 
     public override void FixedUpdate()

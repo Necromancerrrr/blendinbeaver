@@ -16,6 +16,8 @@ public class BearSearchState : BearState
         base.EnterState();
         transitionCheckTimer = 0;
         movementTimer = 0;
+
+        bear.growl.SetText("WHERE BEAVER", 5.0f);
     }
 
     public override void ExitState()
