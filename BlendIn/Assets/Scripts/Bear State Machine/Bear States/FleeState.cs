@@ -21,11 +21,11 @@ public class BearFleeState : BearState
 
         randPosMin = Random.Range(0, 2) * 2 - 1;
 
-        // Transform playerTransform = GameObject.FindGameObjectWithTag("Player").transform; use if it feels like the bear is getting too close to player
+        Transform playerTransform = GameObject.FindGameObjectWithTag("Player").transform; // use if it feels like the bear is getting too close to player
 
         bear.growl.SetText("I SCARED!!", 5.0f);
 
-        bear.agent.SetDestination(new Vector3(bear.transform.position.x + 30 * randPosMin, bear.transform.position.y, bear.transform.position.z + 30 * randPosMin));
+        bear.agent.SetDestination(new Vector3(bear.collidedBeehive.transform.position.x + 15f * randPosMin, bear.transform.position.y, bear.collidedBeehive.transform.position.z + 15f * randPosMin)); // change to fix points on map that bear runs to
     }
 
     public override void ExitState()
@@ -52,7 +52,7 @@ public class BearFleeState : BearState
     {
         base.TransitionChecks();
 
-        if (timer >= 8) // after x seconds go to IDLE
+        if (timer >= 6) // after x seconds go to IDLE
         {
             bearStateMachine.ChangeState(bear.IdleState);
         }

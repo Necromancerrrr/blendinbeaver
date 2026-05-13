@@ -25,6 +25,8 @@ public class BearState
         isExitingState = false;
         startTime = Time.time;
         //animationController.SetBool(animationName, true);
+
+        bear.playerCaught = false;
     }
 
     public virtual void ExitState()

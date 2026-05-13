@@ -10,6 +10,8 @@ public class AgentBehaviour : MonoBehaviour
     [HideInInspector] public NavMeshAgent agent;
 
     [HideInInspector] public bool beeCollision;
+    [HideInInspector] public GameObject collidedBeehive;
+
     [HideInInspector] public Transform[] beehiveTransforms = new Transform[7];
     [HideInInspector] public int lastChosenBeehive = 0;
     [HideInInspector] public Transform lastSeenPlayerPos;
@@ -47,23 +49,23 @@ public class AgentBehaviour : MonoBehaviour
         
         for (int i = 0; i < beehiveTransforms.Length; i++) // get all beehives
         {
-            print(beehives[i].transform.position);
+            //print(beehives[i].transform.position);
             beehiveTransforms[i] = beehives[i].transform;
         }
         
         StateMachine = new BearStateMachine();
 
-        IdleState = new BearIdleState(this, StateMachine, null, null);
+        IdleState = new BearIdleState(this, StateMachine, null, animator);
 
-        FleeState = new BearFleeState(this, StateMachine, null, null);
+        FleeState = new BearFleeState(this, StateMachine, null, animator);
 
-        SearchState = new BearSearchState(this, StateMachine, null, null);
+        SearchState = new BearSearchState(this, StateMachine, null, animator);
 
-        ChaseState = new BearChaseState(this, StateMachine, null, null);
+        ChaseState = new BearChaseState(this, StateMachine, null, animator);
 
-        WanderState = new BearWanderState(this, StateMachine, null, null);
+        WanderState = new BearWanderState(this, StateMachine, null, animator);
 
-        CaughtState = new BearCaughtState(this, StateMachine, null, null);
+        CaughtState = new BearCaughtState(this, StateMachine, null, animator);
 
         StateMachine.Initialise(IdleState);
     }
@@ -73,7 +75,8 @@ public class AgentBehaviour : MonoBehaviour
         if (other.gameObject.layer == 10) // if collided with beehive
         {
             beeCollision = true;
-
+            collidedBeehive = other.gameObject;
+            Debug.Log(collidedBeehive.transform.position);
             other.gameObject.SetActive(false); // no more bees on the beehive
         }
 
@@ -81,11 +84,6 @@ public class AgentBehaviour : MonoBehaviour
         {
             playerCaught = true;
         }
-    }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        
     }
 
     void Update()

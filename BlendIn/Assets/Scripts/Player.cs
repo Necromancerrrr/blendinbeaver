@@ -12,6 +12,9 @@ public class Player : MonoBehaviour
     public bool blendingIn = false;
     public bool isRunning = false;
 
+    public float blendInMeter = 100f;
+    public float blendInMeterROC = 2f;
+
     public InputActionReference leftTrigger;
     public InputActionReference rightTrigger;
 
