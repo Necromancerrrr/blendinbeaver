@@ -12,8 +12,6 @@ public class StickBag : MonoBehaviour
     [SerializeField] private TMP_Text leftHandScore;
     [SerializeField] private TMP_Text rightHandScore;
 
-    [SerializeField] private GameObject testBranch;
-
     [SerializeField] private GameObject stick1;
     [SerializeField] private GameObject stick2;
     [SerializeField] private GameObject stick3;
@@ -29,6 +27,7 @@ public class StickBag : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+
         if (collision.gameObject.tag == "Collectable")
         {
             //replace this if else with a for loop and have all sticks in a list/array
@@ -48,7 +47,10 @@ public class StickBag : MonoBehaviour
             leftHandScore.text = player.score.ToString();
             rightHandScore.text = player.score.ToString();
 
-            collision.gameObject.transform.DOScale(0f, 0.5f).OnComplete(() =>
+            DOTween.Kill("killStick");
+
+            collision.gameObject.transform.DOMove(transform.position, 0.5f).SetId("killStick");
+            collision.gameObject.transform.DOScale(0f, 0.5f).SetEase(Ease.InCubic).SetId("killStick").OnComplete(() =>
             {
                 Destroy(collision.gameObject);
             });
