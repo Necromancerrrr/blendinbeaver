@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using DG.Tweening;
 
 public class StickBag : MonoBehaviour
 {
@@ -47,8 +48,10 @@ public class StickBag : MonoBehaviour
             leftHandScore.text = player.score.ToString();
             rightHandScore.text = player.score.ToString();
 
-            //animate it getting smaller?
-            Destroy(collision.gameObject);
+            collision.gameObject.transform.DOScale(0f, 0.5f).OnComplete(() =>
+            {
+                Destroy(collision.gameObject);
+            });
 
             stickSpawner.numberOfSticks -= 1;
         }
