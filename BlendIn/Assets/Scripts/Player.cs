@@ -70,9 +70,8 @@ public class Player : MonoBehaviour
         {
             isRunning = false;
 
-            
-
             ControllerDistance(PositionCurrentFrameLeftHand, PositionCurrentFrameRightHand);
+
         }
     }
 
@@ -113,11 +112,13 @@ public class Player : MonoBehaviour
         float leftDistance = Vector3.Distance(MainCamera.transform.position, PositionCurrentFrameLeftHand);
         float rightDistance = Vector3.Distance(MainCamera.transform.position, PositionCurrentFrameRightHand);
 
-        if (leftDistance <= 0.2f && rightDistance <= 0.2f)
+        if (leftDistance <= 0.4f && rightDistance <= 0.4f) //  && blendInMeter > 0
         {
             blendingIn = true;
             navMeshObstacle.enabled = true;
             stickLocomotion.SetActive(false);
+
+            //blendInMeter -= blendInMeterROC * Time.deltaTime;
             //print("BLENDING IN");
         }
         else
@@ -125,6 +126,8 @@ public class Player : MonoBehaviour
             blendingIn = false;
             navMeshObstacle.enabled = false;
             stickLocomotion.SetActive(true);
+
+            //blendInMeter += blendInMeterROC * 3 * Time.deltaTime; // magic numbers raaahhhhhhhhh
             //print("NOT BLENDING IN");
         }
     }

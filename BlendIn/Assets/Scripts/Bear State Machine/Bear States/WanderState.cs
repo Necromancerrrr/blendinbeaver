@@ -20,7 +20,7 @@ public class BearWanderState : BearState
 
         movementTimer = 0;
 
-        timeIntervals = Random.Range(6, 11); // choose how long the bear will be moving towards this target, 6 - 10 seconds range
+        timeIntervals = Random.Range(8, 11); // choose how long the bear will be moving towards this target, 8 - 10 seconds range
 
         int randNum = Random.Range(0, 7); // choose a random beehive to travel to
 
