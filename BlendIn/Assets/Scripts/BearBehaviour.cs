@@ -55,17 +55,17 @@ public class AgentBehaviour : MonoBehaviour
         
         StateMachine = new BearStateMachine();
 
-        IdleState = new BearIdleState(this, StateMachine, null, animator);
+        IdleState = new BearIdleState(this, StateMachine, "idleState", animator);
 
-        FleeState = new BearFleeState(this, StateMachine, null, animator);
+        FleeState = new BearFleeState(this, StateMachine, "fleeState", animator);
 
-        SearchState = new BearSearchState(this, StateMachine, null, animator);
+        SearchState = new BearSearchState(this, StateMachine, "searchState", animator);
 
-        ChaseState = new BearChaseState(this, StateMachine, null, animator);
+        ChaseState = new BearChaseState(this, StateMachine, "chaseState", animator);
 
-        WanderState = new BearWanderState(this, StateMachine, null, animator);
+        WanderState = new BearWanderState(this, StateMachine, "wanderState", animator);
 
-        CaughtState = new BearCaughtState(this, StateMachine, null, animator);
+        CaughtState = new BearCaughtState(this, StateMachine, "caughtState", animator);
 
         StateMachine.Initialise(IdleState);
     }

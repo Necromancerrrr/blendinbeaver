@@ -3,7 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class BearCaughtState : BearState
 {
-    public BearCaughtState(AgentBehaviour bear, BearStateMachine bearStateMachine, string animationName, Animator animationController) : base(bear, bearStateMachine, animationName, animationController)
+    public BearCaughtState(AgentBehaviour bear, BearStateMachine bearStateMachine, string animationState, Animator animationController) : base(bear, bearStateMachine, animationState, animationController)
     {
     }
 

@@ -5,18 +5,18 @@ public class BearState
     protected AgentBehaviour bear;
     protected BearStateMachine bearStateMachine;
     protected Animator animationController;
-    protected string animationName;
+    protected string animationState;
 
     protected bool isExitingState;
     protected bool isAnimationFinished;
     protected float startTime;
 
-    public BearState(AgentBehaviour bear, BearStateMachine bearStateMachine, string animationName, Animator animationController)
+    public BearState(AgentBehaviour bear, BearStateMachine bearStateMachine, string animationState, Animator animationController)
     {
         this.bear = bear;
         this.bearStateMachine = bearStateMachine;
         this.animationController = animationController;
-        this.animationName = animationName;
+        this.animationState = animationState;
     }
 
     public virtual void EnterState()
@@ -24,7 +24,8 @@ public class BearState
         isAnimationFinished = false;
         isExitingState = false;
         startTime = Time.time;
-        //animationController.SetBool(animationName, true);
+        animationController.SetBool(animationState, true);
+            
 
         bear.playerCaught = false;
     }
@@ -32,8 +33,8 @@ public class BearState
     public virtual void ExitState()
     {
         isExitingState = true;
-        //if (!isAnimationFinished) isAnimationFinished = true;
-        //animationController.SetBool(animationName, false);
+        if (!isAnimationFinished) isAnimationFinished = true;
+        animationController.SetBool(animationState, false);
     }
 
     public virtual void FrameUpdate()

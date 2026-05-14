@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class BearWanderState : BearState
 {
-    public BearWanderState(AgentBehaviour bear, BearStateMachine bearStateMachine, string animationName, Animator animationController) : base(bear, bearStateMachine, animationName, animationController)
+    public BearWanderState(AgentBehaviour bear, BearStateMachine bearStateMachine, string animationState, Animator animationController) : base(bear, bearStateMachine, animationState, animationController)
     {
     }
 

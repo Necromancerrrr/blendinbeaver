@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 
 public class BearIdleState : BearState
 {
-    public BearIdleState(AgentBehaviour bear, BearStateMachine bearStateMachine, string animationName, Animator animationController) : base(bear, bearStateMachine, animationName, animationController)
+    public BearIdleState(AgentBehaviour bear, BearStateMachine bearStateMachine, string animationState, Animator animationController) : base(bear, bearStateMachine, animationState, animationController)
     {
     }
 
