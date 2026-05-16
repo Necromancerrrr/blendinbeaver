@@ -6,6 +6,8 @@ public class BearChaseState : BearState
     {
     }
 
+    public BearMaterialSwap angrymaterialSwap;
+    
     public override void EnterState()
     {
         Debug.Log("Entered Chase");
@@ -14,6 +16,8 @@ public class BearChaseState : BearState
 
         bear.growl.SetText("GRRR!", 5.0f);
 
+        angrymaterialSwap = bear.GetComponent<BearMaterialSwap>();
+ 
     }
 
     public override void ExitState()

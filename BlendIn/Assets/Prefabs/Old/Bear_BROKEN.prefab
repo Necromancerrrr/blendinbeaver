@@ -217,15 +217,15 @@ GameObject:
   m_Component:
   - component: {fileID: 3787204975939316098}
   - component: {fileID: 225462871343719975}
+  - component: {fileID: 3664788691960493103}
   - component: {fileID: 2649794438295687917}
   - component: {fileID: 8334852212890464358}
   - component: {fileID: 1451351701779574741}
   - component: {fileID: 7424858495430651121}
-  - component: {fileID: 3664788691960493103}
   - component: {fileID: 1421948428006987883}
   - component: {fileID: 7561575688001663547}
   m_Layer: 0
-  m_Name: Bear_Prefab
+  m_Name: Bear_BROKEN
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -255,6 +255,28 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4595090473785504568}
   m_Mesh: {fileID: 3838709392123257655, guid: 23a805c03931c7f46b2c12acb40e2e05, type: 3}
+--- !u!95 &3664788691960493103
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4595090473785504568}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: 23a805c03931c7f46b2c12acb40e2e05, type: 3}
+  m_Controller: {fileID: 9100000, guid: b22b7d87f6a16c840b3b6f3714ea156b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!23 &2649794438295687917
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -360,6 +382,7 @@ MonoBehaviour:
   animator: {fileID: 0}
   agent: {fileID: 0}
   beeCollision: 0
+  collidedBeehive: {fileID: 0}
   beehiveTransforms:
   - {fileID: 0}
   - {fileID: 0}
@@ -374,28 +397,6 @@ MonoBehaviour:
   BlendIn: {fileID: 0}
   inFOV: {fileID: 1451351701779574741}
   growl: {fileID: 7601632390111021949}
---- !u!95 &3664788691960493103
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4595090473785504568}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 23a805c03931c7f46b2c12acb40e2e05, type: 3}
-  m_Controller: {fileID: 9100000, guid: b22b7d87f6a16c840b3b6f3714ea156b, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!64 &1421948428006987883
 MeshCollider:
   m_ObjectHideFlags: 0
