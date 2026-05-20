@@ -1088,6 +1088,8 @@ MonoBehaviour:
   score: 0
   blendingIn: 0
   isRunning: 0
+  blendInMeter: 100
+  blendInMeterROC: 2
   leftTrigger: {fileID: 1487604329128296142, guid: ffd0df961d5aaf34ba7ba02c53d3359c, type: 3}
   rightTrigger: {fileID: -6735670030944177083, guid: ffd0df961d5aaf34ba7ba02c53d3359c, type: 3}
   LeftHand: {fileID: 202364687}
@@ -1429,7 +1431,6 @@ MonoBehaviour:
   player: {fileID: 2384625035704376712}
   leftHandScore: {fileID: 2510071453985106671}
   rightHandScore: {fileID: 1781134028209618397}
-  testBranch: {fileID: 5504527063581437300, guid: 060abcfa8ffe99344b166f83f9db7820, type: 3}
   stick1: {fileID: 2783821773511260788, guid: b9fd0c3afc163af46b93fa05e15b44a8, type: 3}
   stick2: {fileID: 4280321357611734900, guid: 4651931338c9d034395bad7c2f80c886, type: 3}
   stick3: {fileID: 2012309083249257523, guid: 95daae37c573e3147a2f9013adaaae0c, type: 3}
