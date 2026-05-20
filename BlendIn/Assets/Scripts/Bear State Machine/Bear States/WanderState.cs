@@ -74,10 +74,10 @@ public class BearWanderState : BearState
 
         if (movementTimer > timeIntervals)
         {
-            bearStateMachine.ChangeState(bear.IdleState); // after x seconds go to IDLE
+            //bearStateMachine.ChangeState(bear.IdleState); // after x seconds go to IDLE
         }
 
-        if (bear.transform.position == destination.position)
+        if (movementTimer > 1 && bear.agent.velocity == Vector3.zero)
         {
             bearStateMachine.ChangeState(bear.IdleState); // after bear reaches beehive go to IDLE
         }

@@ -5,7 +5,6 @@ using UnityEngine.AI;
 [RequireComponent(typeof(NavMeshAgent))]
 public class AgentBehaviour : MonoBehaviour
 {
-
     [HideInInspector] public Animator animator;
     [HideInInspector] public NavMeshAgent agent;
 
