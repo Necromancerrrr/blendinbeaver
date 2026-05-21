@@ -936,6 +936,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7162602615162024691, guid: 520381c93e2f9734bab9f23f83618de2, type: 3}
   m_PrefabInstance: {fileID: 190610878}
   m_PrefabAsset: {fileID: 0}
+--- !u!137 &213512598 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 1246478914339106620, guid: 4e2be3ec87a3eeb4b8f0ffb3e6b7172a, type: 3}
+  m_PrefabInstance: {fileID: 8769121491084553228}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &217318298
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1605,7 +1610,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1717954561962503726, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 8.95
+      value: 39
       objectReference: {fileID: 0}
     - target: {fileID: 1717954561962503726, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1613,7 +1618,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1717954561962503726, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 3.88
+      value: -21.67
       objectReference: {fileID: 0}
     - target: {fileID: 1717954561962503726, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1683,6 +1688,10 @@ PrefabInstance:
       propertyPath: blendInSlider
       value: 
       objectReference: {fileID: 1264808585}
+    - target: {fileID: 2384625035704376712, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
+      propertyPath: blendInMeterROC
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 2449787133337329437, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       propertyPath: m_Layer
       value: 7
@@ -3977,9 +3986,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chaseMat: {fileID: 2100000, guid: 2fc8d5e9428b2b94683c71fc96a533d5, type: 2}
-  friendlyMat: {fileID: 0}
+  friendlyMat: {fileID: 2100000, guid: 9d59546f73750304c98b46328ba3f6cd, type: 2}
   bear: {fileID: 1008557243}
-  skinnedMeshRenderer: {fileID: 0}
+  skinnedMeshRenderer: {fileID: 213512598}
 --- !u!1001 &1018638988
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4968,6 +4977,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1264808586}
   - component: {fileID: 1264808587}
+  - component: {fileID: 1264808588}
   m_Layer: 5
   m_Name: BlendInMeter
   m_TagString: Untagged
@@ -4994,7 +5004,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 200}
+  m_AnchoredPosition: {x: 0, y: 300}
   m_SizeDelta: {x: 400, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1264808587
@@ -5042,12 +5052,24 @@ MonoBehaviour:
   m_HandleRect: {fileID: 241817754}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 1
+  m_MaxValue: 100
   m_WholeNumbers: 0
-  m_Value: 1
+  m_Value: 100
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!225 &1264808588
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1264808585}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1001 &1276000993
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7870,9 +7892,9 @@ Canvas:
   m_GameObject: {fileID: 1771947878}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_Camera: {fileID: 1049969179}
-  m_PlaneDistance: 100
+  m_PlaneDistance: 1
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
@@ -9278,6 +9300,14 @@ PrefabInstance:
       propertyPath: BlendIn
       value: 
       objectReference: {fileID: 792572105}
+    - target: {fileID: 2305956721476657134, guid: 4e2be3ec87a3eeb4b8f0ffb3e6b7172a, type: 3}
+      propertyPath: materialSwap
+      value: 
+      objectReference: {fileID: 1008557251}
+    - target: {fileID: 2814277547107595696, guid: 4e2be3ec87a3eeb4b8f0ffb3e6b7172a, type: 3}
+      propertyPath: m_Radius
+      value: 0.04579457
+      objectReference: {fileID: 0}
     - target: {fileID: 5993391329685508388, guid: 4e2be3ec87a3eeb4b8f0ffb3e6b7172a, type: 3}
       propertyPath: playerReference
       value: 
@@ -9379,6 +9409,7 @@ SceneRoots:
   - {fileID: 9035129785886390319}
   - {fileID: 1771947882}
   - {fileID: 441087506}
+  - {fileID: 8769121491084553228}
   - {fileID: 756192408}
   - {fileID: 2092139010}
   - {fileID: 1249617921}
@@ -9431,4 +9462,3 @@ SceneRoots:
   - {fileID: 1340328088}
   - {fileID: 1159026932}
   - {fileID: 232096621}
-  - {fileID: 8769121491084553228}

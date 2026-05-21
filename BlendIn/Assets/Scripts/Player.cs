@@ -5,6 +5,7 @@ using UnityEngine.AI;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using DG.Tweening;
 
 public class Player : MonoBehaviour
 {
@@ -14,12 +15,15 @@ public class Player : MonoBehaviour
     public bool isRunning = false;
 
     public float blendInMeter = 100f;
-    public float blendInMeterROC = 2f;
+    public float blendInMeterROC = 10f;
 
     public InputActionReference leftTrigger;
     public InputActionReference rightTrigger;
 
     public GameObject blendInSlider;
+
+    private bool cantBlendIn = false;
+    private float cantBlendInTimer = 0f;
 
     #region
     // Game Objects
@@ -50,6 +54,8 @@ public class Player : MonoBehaviour
         PlayerPositionPreviousFrame = transform.position; //set current positions
         PositionPreviousFrameLeftHand = LeftHand.transform.position; //set previous positions
         PositionPreviousFrameRightHand = RightHand.transform.position;
+
+        blendInSlider.GetComponent<CanvasGroup>().alpha = 0;
     }
 
     // Update is called once per frame
@@ -61,13 +67,14 @@ public class Player : MonoBehaviour
         if (leftTrigger.action.IsPressed() && rightTrigger.action.IsPressed())
         {
             blendingIn = false;
-            blendInSlider.SetActive(false);
+
+            DOTween.Kill("sliderTween");
+            blendInSlider.GetComponent<CanvasGroup>().DOFade(0, 0.1f).SetId("sliderTween");
+
             ArmSwingingMechanic(PositionCurrentFrameLeftHand, PositionCurrentFrameRightHand);
             stickLocomotion.SetActive(false);
 
             isRunning = true;
-
-            print("RUNNING");
         }
         else
         {
@@ -114,27 +121,56 @@ public class Player : MonoBehaviour
         float leftDistance = Vector3.Distance(MainCamera.transform.position, PositionCurrentFrameLeftHand);
         float rightDistance = Vector3.Distance(MainCamera.transform.position, PositionCurrentFrameRightHand);
 
-        if (leftDistance <= 0.4f && rightDistance <= 0.4f && blendInMeter > 0)
+        if (blendInMeter < 1 && !cantBlendIn)
+        {
+            cantBlendIn = true;
+
+            blendingIn = false;
+
+            cantBlendInTimer = 0;
+
+            DOTween.Kill("sliderTween");
+            blendInSlider.GetComponent<CanvasGroup>().DOFade(0, 0.1f).SetId("sliderTween");
+        }
+
+        if (cantBlendIn)
+        {
+            cantBlendInTimer += Time.deltaTime;
+
+            if (cantBlendInTimer > 2)
+            {
+                cantBlendIn = false;
+            }
+        }
+
+        if (leftDistance <= 0.4f && rightDistance <= 0.4f && !cantBlendIn)
         {
             blendingIn = true;
-            blendInSlider.SetActive(true);
+
+            DOTween.Kill("sliderTween");
+            blendInSlider.GetComponent<CanvasGroup>().DOFade(1, 0.1f).SetId("sliderTween");
             navMeshObstacle.enabled = true;
             stickLocomotion.SetActive(false);
 
             blendInMeter -= blendInMeterROC * Time.deltaTime;
-            blendInSlider.GetComponent<Slider>().value = Mathf.Clamp(blendInMeter, 0, 100);
+            blendInSlider.GetComponent<Slider>().value = blendInMeter;
             //print("BLENDING IN");
         }
         else
         {
             blendingIn = false;
-            blendInSlider.SetActive(false);
+            
+            DOTween.Kill("sliderTween");
+            blendInSlider.GetComponent<CanvasGroup>().DOFade(0, 0.1f).SetId("sliderTween");
+
             navMeshObstacle.enabled = false;
             stickLocomotion.SetActive(true);
 
             blendInMeter += blendInMeterROC * 3 * Time.deltaTime; // magic numbers raaahhhhhhhhh
-            blendInSlider.GetComponent<Slider>().value = Mathf.Clamp(blendInMeter, 0, 100);
+            
+            blendInSlider.GetComponent<Slider>().value = blendInMeter;
             //print("NOT BLENDING IN");
         }
+        blendInMeter = Mathf.Clamp(blendInMeter, 0, 100);
     }
 }
