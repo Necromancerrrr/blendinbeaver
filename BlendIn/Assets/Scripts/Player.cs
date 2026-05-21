@@ -137,6 +137,8 @@ public class Player : MonoBehaviour
         {
             cantBlendInTimer += Time.deltaTime;
 
+            blendingIn = false;
+
             if (cantBlendInTimer > 2)
             {
                 cantBlendIn = false;
