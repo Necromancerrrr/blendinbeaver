@@ -1682,7 +1682,7 @@ PrefabInstance:
     - target: {fileID: 2384625035704376712, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       propertyPath: blendInSlider
       value: 
-      objectReference: {fileID: 1264808587}
+      objectReference: {fileID: 1264808585}
     - target: {fileID: 2449787133337329437, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       propertyPath: m_Layer
       value: 7
@@ -3977,6 +3977,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chaseMat: {fileID: 2100000, guid: 2fc8d5e9428b2b94683c71fc96a533d5, type: 2}
+  friendlyMat: {fileID: 0}
   bear: {fileID: 1008557243}
   skinnedMeshRenderer: {fileID: 0}
 --- !u!1001 &1018638988
