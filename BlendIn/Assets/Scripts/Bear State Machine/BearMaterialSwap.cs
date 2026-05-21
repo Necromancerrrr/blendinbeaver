@@ -5,10 +5,11 @@ public class BearMaterialSwap : MonoBehaviour
     
     public Material chaseMat;
     public GameObject bear;
+    public SkinnedMeshRenderer skinnedMeshRenderer;
 
-    void Start()
+    public void SwapMaterial()
     {
-        bear.GetComponent<Renderer>().material = chaseMat;
+        skinnedMeshRenderer.material = chaseMat;
     }
 
 }

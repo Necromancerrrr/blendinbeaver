@@ -17,6 +17,8 @@ public class AgentBehaviour : MonoBehaviour
 
     [HideInInspector] public bool playerCaught;
 
+
+    public BearMaterialSwap angrymaterialSwap;
     public Player BlendIn;
     public FieldOfView inFOV;
     public CharacterTextBox growl;

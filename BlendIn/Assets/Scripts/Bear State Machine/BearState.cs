@@ -11,6 +11,7 @@ public class BearState
     protected bool isAnimationFinished;
     protected float startTime;
 
+
     public BearState(AgentBehaviour bear, BearStateMachine bearStateMachine, string animationState, Animator animationController)
     {
         this.bear = bear;
