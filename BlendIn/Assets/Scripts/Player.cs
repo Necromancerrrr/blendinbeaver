@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
@@ -18,6 +19,7 @@ public class Player : MonoBehaviour
     public InputActionReference leftTrigger;
     public InputActionReference rightTrigger;
 
+    public Slider blendInSlider;
 
     #region
     // Game Objects
@@ -71,7 +73,6 @@ public class Player : MonoBehaviour
             isRunning = false;
 
             ControllerDistance(PositionCurrentFrameLeftHand, PositionCurrentFrameRightHand);
-
         }
     }
 
@@ -112,13 +113,14 @@ public class Player : MonoBehaviour
         float leftDistance = Vector3.Distance(MainCamera.transform.position, PositionCurrentFrameLeftHand);
         float rightDistance = Vector3.Distance(MainCamera.transform.position, PositionCurrentFrameRightHand);
 
-        if (leftDistance <= 0.4f && rightDistance <= 0.4f) //  && blendInMeter > 0
+        if (leftDistance <= 0.4f && rightDistance <= 0.4f && blendInMeter > 0)
         {
             blendingIn = true;
             navMeshObstacle.enabled = true;
             stickLocomotion.SetActive(false);
 
-            //blendInMeter -= blendInMeterROC * Time.deltaTime;
+            blendInMeter -= blendInMeterROC * Time.deltaTime;
+            blendInSlider.value = Mathf.Clamp(blendInMeter, 0, 100);
             //print("BLENDING IN");
         }
         else
@@ -127,7 +129,8 @@ public class Player : MonoBehaviour
             navMeshObstacle.enabled = false;
             stickLocomotion.SetActive(true);
 
-            //blendInMeter += blendInMeterROC * 3 * Time.deltaTime; // magic numbers raaahhhhhhhhh
+            blendInMeter += blendInMeterROC * 3 * Time.deltaTime; // magic numbers raaahhhhhhhhh
+            blendInSlider.value = Mathf.Clamp(blendInMeter, 0, 100);
             //print("NOT BLENDING IN");
         }
     }
