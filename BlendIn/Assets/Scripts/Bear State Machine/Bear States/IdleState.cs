@@ -22,7 +22,9 @@ public class BearIdleState : BearState
 
         bear.agent.isStopped = true; // do nothing
 
-        
+        bear.materialSwap.SwapFriendlyMaterial();
+
+
     }
 
     public override void ExitState()

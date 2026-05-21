@@ -15,13 +15,14 @@ public class BearChaseState : BearState
 
         bear.growl.SetText("GRRR!", 5.0f);
 
-        bear.angrymaterialSwap.SwapMaterial();
+        bear.materialSwap.SwapAngryMaterial();
 
     }
 
     public override void ExitState()
     {
         base.ExitState();
+        bear.materialSwap.SwapFriendlyMaterial();
     }
 
     public override void FrameUpdate()
