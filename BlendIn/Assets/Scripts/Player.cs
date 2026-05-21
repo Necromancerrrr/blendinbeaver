@@ -19,7 +19,7 @@ public class Player : MonoBehaviour
     public InputActionReference leftTrigger;
     public InputActionReference rightTrigger;
 
-    public Slider blendInSlider;
+    public GameObject blendInSlider;
 
     #region
     // Game Objects
@@ -61,6 +61,7 @@ public class Player : MonoBehaviour
         if (leftTrigger.action.IsPressed() && rightTrigger.action.IsPressed())
         {
             blendingIn = false;
+            blendInSlider.SetActive(false);
             ArmSwingingMechanic(PositionCurrentFrameLeftHand, PositionCurrentFrameRightHand);
             stickLocomotion.SetActive(false);
 
@@ -116,21 +117,23 @@ public class Player : MonoBehaviour
         if (leftDistance <= 0.4f && rightDistance <= 0.4f && blendInMeter > 0)
         {
             blendingIn = true;
+            blendInSlider.SetActive(true);
             navMeshObstacle.enabled = true;
             stickLocomotion.SetActive(false);
 
             blendInMeter -= blendInMeterROC * Time.deltaTime;
-            blendInSlider.value = Mathf.Clamp(blendInMeter, 0, 100);
+            blendInSlider.GetComponent<Slider>().value = Mathf.Clamp(blendInMeter, 0, 100);
             //print("BLENDING IN");
         }
         else
         {
             blendingIn = false;
+            blendInSlider.SetActive(false);
             navMeshObstacle.enabled = false;
             stickLocomotion.SetActive(true);
 
             blendInMeter += blendInMeterROC * 3 * Time.deltaTime; // magic numbers raaahhhhhhhhh
-            blendInSlider.value = Mathf.Clamp(blendInMeter, 0, 100);
+            blendInSlider.GetComponent<Slider>().value = Mathf.Clamp(blendInMeter, 0, 100);
             //print("NOT BLENDING IN");
         }
     }
