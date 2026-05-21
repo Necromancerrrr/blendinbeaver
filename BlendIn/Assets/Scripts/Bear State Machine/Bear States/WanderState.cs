@@ -22,11 +22,11 @@ public class BearWanderState : BearState
 
         timeIntervals = Random.Range(8, 11); // choose how long the bear will be moving towards this target, 8 - 10 seconds range
 
-        int randNum = Random.Range(0, 7); // choose a random beehive to travel to
+        int randNum = Random.Range(0, 6); // choose a random beehive to travel to
 
         while (randNum == bear.lastChosenBeehive) // stops same beehive being chosen twice in a row
         {
-            randNum = Random.Range(0, 7);
+            randNum = Random.Range(0, 6);
         }
 
         bear.lastChosenBeehive = randNum;

@@ -11,7 +11,7 @@ public class AgentBehaviour : MonoBehaviour
     [HideInInspector] public bool beeCollision;
     [HideInInspector] public GameObject collidedBeehive;
 
-    [HideInInspector] public Transform[] beehiveTransforms = new Transform[6];
+    [HideInInspector] public Transform[] beehiveTransforms;
     [HideInInspector] public int lastChosenBeehive = 0;
     [HideInInspector] public Transform lastSeenPlayerPos;
 
@@ -47,10 +47,10 @@ public class AgentBehaviour : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
 
         GameObject[] beehives = GameObject.FindGameObjectsWithTag("Beehive");
-        
+        beehiveTransforms = new Transform[6];
+
         for (int i = 0; i < beehiveTransforms.Length; i++) // get all beehives
         {
-            //print(beehives[i].transform.position);
             beehiveTransforms[i] = beehives[i].transform;
         }
         
