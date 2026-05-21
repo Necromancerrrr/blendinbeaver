@@ -11,7 +11,7 @@ public class AgentBehaviour : MonoBehaviour
     [HideInInspector] public bool beeCollision;
     [HideInInspector] public GameObject collidedBeehive;
 
-    [HideInInspector] public Transform[] beehiveTransforms = new Transform[7];
+    [HideInInspector] public Transform[] beehiveTransforms = new Transform[6];
     [HideInInspector] public int lastChosenBeehive = 0;
     [HideInInspector] public Transform lastSeenPlayerPos;
 
