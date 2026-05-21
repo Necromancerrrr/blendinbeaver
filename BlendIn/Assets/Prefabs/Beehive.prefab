@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1955444275800145561}
   m_Layer: 10
   m_Name: Bees
-  m_TagString: Beehive
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -71,7 +71,7 @@ GameObject:
   - component: {fileID: 5224106097117607170}
   m_Layer: 0
   m_Name: Beehive
-  m_TagString: Untagged
+  m_TagString: Beehive
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
