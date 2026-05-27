@@ -10314,15 +10314,23 @@ PrefabInstance:
     - target: {fileID: 8203545223983910966, guid: 651567a9d530124499f93de1a7201850, type: 3}
       propertyPath: 'spawnPoints.Array.data[0]'
       value: 
-      objectReference: {fileID: 35584327}
+      objectReference: {fileID: 1018638989}
     - target: {fileID: 8203545223983910966, guid: 651567a9d530124499f93de1a7201850, type: 3}
       propertyPath: 'spawnPoints.Array.data[1]'
       value: 
-      objectReference: {fileID: 1420282756}
+      objectReference: {fileID: 1671687966}
     - target: {fileID: 8203545223983910966, guid: 651567a9d530124499f93de1a7201850, type: 3}
       propertyPath: 'spawnPoints.Array.data[2]'
       value: 
-      objectReference: {fileID: 1211373033}
+      objectReference: {fileID: 1250202137}
+    - target: {fileID: 8203545223983910966, guid: 651567a9d530124499f93de1a7201850, type: 3}
+      propertyPath: 'spawnPoints.Array.data[3]'
+      value: 
+      objectReference: {fileID: 1250202137}
+    - target: {fileID: 8203545223983910966, guid: 651567a9d530124499f93de1a7201850, type: 3}
+      propertyPath: 'spawnPoints.Array.data[4]'
+      value: 
+      objectReference: {fileID: 1250202137}
     - target: {fileID: 9198698143608510115, guid: 651567a9d530124499f93de1a7201850, type: 3}
       propertyPath: m_LocalPosition.x
       value: -25

@@ -24,7 +24,7 @@ public class BearIdleState : BearState
 
         bear.materialSwap.SwapFriendlyMaterial();
 
-
+        bear.animator.SetFloat("Speed", 0);
     }
 
     public override void ExitState()

@@ -22,7 +22,12 @@ public class StickBag : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        transform.position = new Vector3(transform.position.x, playerCameraPosition.position.y / 3, transform.position.z);
+        transform.position = new Vector3(transform.position.x, playerCameraPosition.position.y / 2, transform.position.z);
+    }
+
+    private void Update()
+    {
+        transform.position = new Vector3(transform.position.x, playerCameraPosition.position.y / 2, transform.position.z);
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -49,7 +54,7 @@ public class StickBag : MonoBehaviour
 
             DOTween.Kill("killStick");
 
-            collision.gameObject.transform.DOMove(transform.position, 0.5f).SetId("killStick");
+            //collision.gameObject.transform.DOMove(transform.position, 0.5f).SetId("killStick");
             collision.gameObject.transform.DOScale(0f, 0.5f).SetEase(Ease.InCubic).SetId("killStick").OnComplete(() =>
             {
                 Destroy(collision.gameObject);
