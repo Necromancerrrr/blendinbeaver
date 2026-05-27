@@ -4,11 +4,13 @@ public class Beehive : MonoBehaviour
 {
 
     [SerializeField] private Rigidbody rb;
+
+    private AgentBehaviour bear;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    void Awake()
     {
-        
+        bear = FindAnyObjectByType<AgentBehaviour>();
     }
 
     // Update is called once per frame
@@ -23,5 +25,10 @@ public class Beehive : MonoBehaviour
         {
             rb.constraints = RigidbodyConstraints.None;
         }
+    }
+
+    private void OnDestroy()
+    {
+        bear.CountBeehives();
     }
 }

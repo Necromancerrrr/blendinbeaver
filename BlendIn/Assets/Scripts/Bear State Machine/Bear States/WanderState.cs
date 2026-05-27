@@ -22,20 +22,25 @@ public class BearWanderState : BearState
 
         timeIntervals = Random.Range(8, 11); // choose how long the bear will be moving towards this target, 8 - 10 seconds range
 
-        int randNum = Random.Range(0, 6); // choose a random beehive to travel to
+        ChooseRandomBeehive();
+
+        // Debug.Log(destination);
+
+        bear.growl.SetText("I WANDER", 5.0f);
+    }
+
+    private void ChooseRandomBeehive()
+    {
+        int randNum = Random.Range(0, bear.beehiveTransforms.Length); // choose a random beehive to travel to
 
         while (randNum == bear.lastChosenBeehive) // stops same beehive being chosen twice in a row
         {
-            randNum = Random.Range(0, 6);
+            randNum = Random.Range(0, bear.beehiveTransforms.Length);
         }
 
         bear.lastChosenBeehive = randNum;
 
         destination = bear.beehiveTransforms[randNum];
-
-        // Debug.Log(destination);
-
-        bear.growl.SetText("I WANDER", 5.0f);
     }
 
     public override void ExitState()
@@ -47,7 +52,11 @@ public class BearWanderState : BearState
     {
         movementTimer += Time.deltaTime;
 
-        
+        if (bear.beehivesRecounted == true)
+        {
+            ChooseRandomBeehive();
+            bear.beehivesRecounted = false;
+        }
 
         bear.agent.SetDestination(destination.position);
         bear.animator.SetFloat("Speed", bear.agent.velocity.magnitude);

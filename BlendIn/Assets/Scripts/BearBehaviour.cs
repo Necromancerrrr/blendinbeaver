@@ -17,6 +17,7 @@ public class AgentBehaviour : MonoBehaviour
 
     [HideInInspector] public bool playerCaught;
 
+    [HideInInspector] public bool beehivesRecounted = false;
 
     public BearMaterialSwap materialSwap;
     public Player BlendIn;
@@ -46,14 +47,9 @@ public class AgentBehaviour : MonoBehaviour
         animator = GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();
 
-        GameObject[] beehives = GameObject.FindGameObjectsWithTag("Beehive");
-        beehiveTransforms = new Transform[6];
+        CountBeehives();
+        beehivesRecounted = false;
 
-        for (int i = 0; i < beehiveTransforms.Length; i++) // get all beehives
-        {
-            beehiveTransforms[i] = beehives[i].transform;
-        }
-        
         StateMachine = new BearStateMachine();
 
         IdleState = new BearIdleState(this, StateMachine, "idleState", animator);
@@ -71,14 +67,29 @@ public class AgentBehaviour : MonoBehaviour
         StateMachine.Initialise(IdleState);
     }
 
+    public void CountBeehives()
+    {
+        GameObject[] beehives = GameObject.FindGameObjectsWithTag("Beehive");
+        beehiveTransforms = new Transform[beehives.Length];
+
+        for (int i = 0; i < beehiveTransforms.Length; i++) // get all beehives
+        {
+            beehiveTransforms[i] = beehives[i].transform;
+        }
+
+        beehivesRecounted = true;
+    }
+
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.layer == 10) // if collided with beehive
+        if (other.gameObject.layer == 10) // if collided with bees
         {
             beeCollision = true;
             collidedBeehive = other.gameObject;
             Debug.Log(collidedBeehive.transform.position);
             other.gameObject.SetActive(false); // no more bees on the beehive
+
+            CountBeehives();
         }
 
         if (other.gameObject.layer == 7)
