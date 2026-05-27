@@ -1092,6 +1092,7 @@ MonoBehaviour:
   blendInMeterROC: 2
   leftTrigger: {fileID: 1487604329128296142, guid: ffd0df961d5aaf34ba7ba02c53d3359c, type: 3}
   rightTrigger: {fileID: -6735670030944177083, guid: ffd0df961d5aaf34ba7ba02c53d3359c, type: 3}
+  blendInSlider: {fileID: 0}
   LeftHand: {fileID: 202364687}
   RightHand: {fileID: 1670256624}
   MainCamera: {fileID: 1767192433}

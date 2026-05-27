@@ -25,7 +25,7 @@ public class BearFleeState : BearState
 
         bear.growl.SetText("I SCARED!!", 5.0f);
 
-        bear.agent.SetDestination(new Vector3(60f, bear.transform.position.y, 0f)); // change to fix points on map that bear runs to
+        bear.agent.SetDestination(new Vector3(0f, bear.transform.position.y, -25f)); // change to fix points on map that bear runs to
     }
 
     public override void ExitState()
