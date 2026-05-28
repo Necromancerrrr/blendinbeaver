@@ -30,11 +30,15 @@ public class BearFleeState : BearState
         bear.agent.SetDestination(new Vector3(0f, bear.transform.position.y, -25f)); // change to fix points on map that bear runs to
 
         bear.agent.speed = bear.bearRunSpeed;
+
+        bear.beesParticles.SetActive(true);
     }
 
     public override void ExitState()
     {
         base.ExitState();
+
+        bear.beesParticles.SetActive(false);
     }
 
     public override void FrameUpdate()

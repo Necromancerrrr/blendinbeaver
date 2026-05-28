@@ -24,6 +24,8 @@ public class AgentBehaviour : MonoBehaviour
     public FieldOfView inFOV;
     public CharacterTextBox growl;
 
+    public GameObject beesParticles;
+
     [HideInInspector] public float bearWalkSpeed = 3.5f;
     [HideInInspector] public float bearRunSpeed = 7f;
 
@@ -53,6 +55,8 @@ public class AgentBehaviour : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();
+
+        beesParticles.SetActive(false);
 
         CountBeehives();
         beehivesRecounted = false;

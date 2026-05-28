@@ -87,7 +87,7 @@ public class Player : MonoBehaviour
 
     private void ArmSwingingMechanic(Vector3 PositionCurrentFrameLeftHand, Vector3 PositionCurrentFrameRightHand)
     {
-        // get forward direction from the center eye camera and set it to the forward direction object
+        // get forward direction from the left hand and set it to the forward direction object
         float yRotation = LeftHand.transform.eulerAngles.y;
 
         //MainCamera.transform.eulerAngles.y;
