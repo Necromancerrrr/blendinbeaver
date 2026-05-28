@@ -41,6 +41,17 @@ public class BearState
     public virtual void FrameUpdate()
     {
         TransitionChecks();
+
+        if (!bear.BlendIn.blendingIn && bear.inFOV.playerInSight)
+        {
+            bear.playerSpottedMeter += bear.playerSpottedRateOfChangePerSecond * Time.deltaTime;
+            bear.playerSpottedMeter = Mathf.Clamp(bear.playerSpottedMeter, 0, bear.playerSpottedMeterMax);
+        }
+        else
+        {
+            bear.playerSpottedMeter -= bear.playerSpottedRateOfChangePerSecond * Time.deltaTime * 2;
+            bear.playerSpottedMeter = Mathf.Clamp(bear.playerSpottedMeter, 0, bear.playerSpottedMeterMax);
+        }
     }
 
     public virtual void FixedUpdate()

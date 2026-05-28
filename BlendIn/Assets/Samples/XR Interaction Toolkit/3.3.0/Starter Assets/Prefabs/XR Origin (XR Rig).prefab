@@ -1436,6 +1436,7 @@ MonoBehaviour:
   stick2: {fileID: 4280321357611734900, guid: 4651931338c9d034395bad7c2f80c886, type: 3}
   stick3: {fileID: 2012309083249257523, guid: 95daae37c573e3147a2f9013adaaae0c, type: 3}
   stickSpawner: {fileID: 0}
+  collectableCollected: {fileID: 8300000, guid: 6022a9b1663f25647808cc7011d2acc0, type: 3}
 --- !u!1 &2190828208922718286
 GameObject:
   m_ObjectHideFlags: 0

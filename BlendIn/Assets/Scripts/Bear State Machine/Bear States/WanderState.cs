@@ -27,6 +27,8 @@ public class BearWanderState : BearState
         // Debug.Log(destination);
 
         bear.growl.SetText("I WANDER", 5.0f);
+
+        bear.agent.speed = bear.bearWalkSpeed;
     }
 
     private void ChooseRandomBeehive()
@@ -61,7 +63,6 @@ public class BearWanderState : BearState
         bear.agent.SetDestination(destination.position);
         bear.animator.SetFloat("Speed", bear.agent.velocity.magnitude);
 
-        
 
         base.FrameUpdate();
     }

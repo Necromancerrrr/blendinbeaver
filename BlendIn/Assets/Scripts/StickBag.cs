@@ -19,6 +19,8 @@ public class StickBag : MonoBehaviour
 
     [SerializeField] private StickSpawner stickSpawner;
 
+    [SerializeField] private AudioClip collectableCollected;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -35,6 +37,11 @@ public class StickBag : MonoBehaviour
 
         if (collision.gameObject.tag == "Collectable")
         {
+            AudioManager.Instance.PlaySFX(collectableCollected, transform, 1);
+
+            collision.gameObject.GetComponent<MeshCollider>().enabled = false;
+            collision.rigidbody.constraints = RigidbodyConstraints.FreezeRotation;
+
             //replace this if else with a for loop and have all sticks in a list/array
             if (collision.gameObject.name[0] == 'L') // Low
             {
@@ -54,8 +61,8 @@ public class StickBag : MonoBehaviour
 
             DOTween.Kill("killStick");
 
-            //collision.gameObject.transform.DOMove(transform.position, 0.5f).SetId("killStick");
-            collision.gameObject.transform.DOScale(0f, 0.5f).SetEase(Ease.InCubic).SetId("killStick").OnComplete(() =>
+            collision.gameObject.transform.DOMove(transform.position, 0.5f).SetEase(Ease.InSine).SetId("killStick");
+            collision.gameObject.transform.DOScale(0f, 0.5f).SetEase(Ease.OutElastic).SetId("killStick").OnComplete(() =>
             {
                 Destroy(collision.gameObject);
             });

@@ -24,6 +24,13 @@ public class AgentBehaviour : MonoBehaviour
     public FieldOfView inFOV;
     public CharacterTextBox growl;
 
+    [HideInInspector] public float bearWalkSpeed = 3.5f;
+    [HideInInspector] public float bearRunSpeed = 7f;
+
+    [HideInInspector] public float playerSpottedMeter;
+    [HideInInspector] public float playerSpottedRateOfChangePerSecond = 40;
+    [HideInInspector] public float playerSpottedMeterMax = 80;
+
     #region State Machine Vars
 
     public BearStateMachine StateMachine;

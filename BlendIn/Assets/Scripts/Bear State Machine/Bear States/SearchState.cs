@@ -18,6 +18,8 @@ public class BearSearchState : BearState
         movementTimer = 0;
 
         bear.growl.SetText("WHERE BEAVER", 5.0f);
+
+        bear.agent.speed = bear.bearRunSpeed;
     }
 
     public override void ExitState()
@@ -44,7 +46,7 @@ public class BearSearchState : BearState
             bear.agent.SetDestination(bear.lastSeenPlayerPos.position + new Vector3(randomPos.x, bear.transform.position.y, randomPos.y));
             movementTimer = 0;
         }
-        
+
         // move around last area player was spotted
     }
 
@@ -58,7 +60,9 @@ public class BearSearchState : BearState
     {
         base.TransitionChecks();
 
-        if (!bear.BlendIn.blendingIn && bear.inFOV.playerInSight) // if spotted player go to CHASE
+        
+
+        if (bear.playerSpottedMeter >= bear.playerSpottedMeterMax) // if spotted player go to CHASE
         {
             bearStateMachine.ChangeState(bear.ChaseState);
         }

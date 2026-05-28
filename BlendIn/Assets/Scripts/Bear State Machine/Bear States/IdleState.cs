@@ -25,6 +25,8 @@ public class BearIdleState : BearState
         bear.materialSwap.SwapFriendlyMaterial();
 
         bear.animator.SetFloat("Speed", 0);
+
+        bear.agent.speed = bear.bearWalkSpeed;
     }
 
     public override void ExitState()
@@ -51,7 +53,7 @@ public class BearIdleState : BearState
     {
         base.TransitionChecks();
 
-        if (!bear.BlendIn.blendingIn && bear.inFOV.playerInSight) // if spotted player go to CHASE
+        if (bear.playerSpottedMeter >= bear.playerSpottedMeterMax) // if spotted player go to CHASE
         {
             bearStateMachine.ChangeState(bear.ChaseState);
         }
