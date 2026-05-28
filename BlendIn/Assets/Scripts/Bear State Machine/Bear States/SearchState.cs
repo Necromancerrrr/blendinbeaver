@@ -19,7 +19,7 @@ public class BearSearchState : BearState
 
         bear.growl.SetText("WHERE BEAVER", 5.0f);
 
-        bear.agent.speed = bear.bearRunSpeed;
+        bear.agent.speed = bear.bearWalkSpeed;
     }
 
     public override void ExitState()
