@@ -7,11 +7,15 @@ public class Beehive : MonoBehaviour
     [SerializeField] private Rigidbody rb;
 
     private AgentBehaviour bear;
-    
+    private BeeHiveSpawner beehiveSpawner;
+
+    [HideInInspector] public int hiveNumber;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Awake()
     {
         bear = FindAnyObjectByType<AgentBehaviour>();
+        beehiveSpawner = FindAnyObjectByType<BeeHiveSpawner>();
     }
 
     // Update is called once per frame
@@ -19,7 +23,6 @@ public class Beehive : MonoBehaviour
     {
         if (transform.position.y <= 0.8)
         {
-            
             Destroy(gameObject);
         }
     }
@@ -28,15 +31,13 @@ public class Beehive : MonoBehaviour
     {
         if (collision.gameObject.tag == "Collectable")
         {
-            gameObject.tag = "Untagged";
-            bear.CountBeehives();
             rb.constraints = RigidbodyConstraints.None;
         }
     }
 
     private void OnDestroy()
     {
+        beehiveSpawner.OnBeehiveDestroyed(hiveNumber);
         Instantiate(honeySplatParticles, transform.position, Quaternion.identity);
-        bear.CountBeehives();
     }
 }

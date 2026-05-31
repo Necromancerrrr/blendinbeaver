@@ -54,12 +54,6 @@ public class BearWanderState : BearState
     {
         movementTimer += Time.deltaTime;
 
-        if (bear.beehivesRecounted == true)
-        {
-            ChooseRandomBeehive();
-            bear.beehivesRecounted = false;
-        }
-
         bear.agent.SetDestination(destination.position);
         bear.animator.SetFloat("Speed", bear.agent.velocity.magnitude);
 

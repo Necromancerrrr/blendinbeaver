@@ -7,6 +7,7 @@ TagManager:
   - Anchor
   - Collectable
   - Beehive
+  - BeehiveSpawnPoints
   layers:
   - Default
   - TransparentFX

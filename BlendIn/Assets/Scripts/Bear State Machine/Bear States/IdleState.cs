@@ -18,7 +18,7 @@ public class BearIdleState : BearState
         base.EnterState();
         timer = 0;
 
-        timeInterval = Random.Range(2, 4); // 0 - 1 seconds of waiting doing nothing
+        timeInterval = Random.Range(2, 4); // 2 - 3 seconds of waiting doing nothing
 
         bear.agent.isStopped = true; // do nothing
 

@@ -47,7 +47,7 @@ public class BearFleeState : BearState
 
         bear.playerSpottedMeter = 0;
 
-        base.FrameUpdate();
+        TransitionChecks();
     }
 
     public override void FixedUpdate()
@@ -58,7 +58,6 @@ public class BearFleeState : BearState
 
     public override void TransitionChecks()
     {
-        base.TransitionChecks();
 
         if (timer >= 6) // after x seconds go to IDLE
         {
