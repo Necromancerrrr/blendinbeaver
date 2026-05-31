@@ -27,7 +27,7 @@ public class AgentBehaviour : MonoBehaviour
     public GameObject beesParticles;
 
     [HideInInspector] public float bearWalkSpeed = 3.5f;
-    [HideInInspector] public float bearRunSpeed = 7f;
+    [HideInInspector] public float bearRunSpeed = 6f;
 
     [HideInInspector] public float playerSpottedMeter;
     [HideInInspector] public float playerSpottedRateOfChangePerSecond = 40;

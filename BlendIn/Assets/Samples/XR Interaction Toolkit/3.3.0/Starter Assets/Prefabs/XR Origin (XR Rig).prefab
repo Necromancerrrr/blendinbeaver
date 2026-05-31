@@ -1568,6 +1568,7 @@ MonoBehaviour:
   player: {fileID: 2384625035704376712}
   leftHandScore: {fileID: 7048017086936456767}
   rightHandScore: {fileID: 7403716829748047791}
+  scoreBoardScore: {fileID: 0}
   stick1: {fileID: 2783821773511260788, guid: b9fd0c3afc163af46b93fa05e15b44a8, type: 3}
   stick2: {fileID: 4280321357611734900, guid: 4651931338c9d034395bad7c2f80c886, type: 3}
   stick3: {fileID: 2012309083249257523, guid: 95daae37c573e3147a2f9013adaaae0c, type: 3}

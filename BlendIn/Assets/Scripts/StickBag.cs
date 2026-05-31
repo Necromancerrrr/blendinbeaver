@@ -11,6 +11,7 @@ public class StickBag : MonoBehaviour
 
     [SerializeField] private TMP_Text leftHandScore;
     [SerializeField] private TMP_Text rightHandScore;
+    [SerializeField] private TMP_Text scoreBoardScore;
 
     [SerializeField] private GameObject stick1;
     [SerializeField] private GameObject stick2;
@@ -58,6 +59,7 @@ public class StickBag : MonoBehaviour
 
             leftHandScore.text = player.score.ToString();
             rightHandScore.text = player.score.ToString();
+            scoreBoardScore.text = player.score.ToString();
 
             DOTween.Kill("killStick");
 
