@@ -20,6 +20,8 @@ public class BearSearchState : BearState
         bear.growl.SetText("WHERE BEAVER", 5.0f);
 
         bear.agent.speed = bear.bearWalkSpeed;
+
+        AudioManager.Instance.PlaySFX(bear.bearIdleClips[1], bear.transform, 1);
     }
 
     public override void ExitState()

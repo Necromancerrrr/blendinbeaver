@@ -18,7 +18,7 @@ public class BearIdleState : BearState
         base.EnterState();
         timer = 0;
 
-        timeInterval = Random.Range(2, 4); // 2 - 3 seconds of waiting doing nothing
+        timeInterval = Random.Range(2, 5); // 2 - 4 seconds of waiting doing nothing
 
         bear.agent.isStopped = true; // do nothing
 
@@ -28,9 +28,9 @@ public class BearIdleState : BearState
 
         bear.agent.speed = bear.bearWalkSpeed;
 
-        if (timeInterval == 3)
+        if (timeInterval >= 3)
         {
-            AudioManager.Instance.PlayRandomSFX(bear.bearIdleClips, bear.transform, 1);
+            AudioManager.Instance.PlaySFX(bear.bearIdleClips[1], bear.transform, 1);
         }
         
         //AudioManager.Instance.PlaySFX(bear.bearChaseClip, bear.transform, 1);
