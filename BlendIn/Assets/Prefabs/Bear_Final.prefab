@@ -5489,7 +5489,6 @@ MonoBehaviour:
   animator: {fileID: 0}
   agent: {fileID: 0}
   beeCollision: 0
-  collidedBeehive: {fileID: 0}
   beehiveTransforms:
   - {fileID: 0}
   - {fileID: 0}
@@ -5501,7 +5500,6 @@ MonoBehaviour:
   lastChosenBeehive: 0
   lastSeenPlayerPos: {fileID: 0}
   playerCaught: 0
-  beehivesRecounted: 0
   materialSwap: {fileID: 653571290445750050}
   BlendIn: {fileID: 0}
   inFOV: {fileID: 5993391329685508388}
@@ -5512,6 +5510,10 @@ MonoBehaviour:
   playerSpottedMeter: 0
   playerSpottedRateOfChangePerSecond: 40
   playerSpottedMeterMax: 80
+  bearIdleClips:
+  - {fileID: 8300000, guid: 7f397ecbacec1af46a01224e4a4561ac, type: 3}
+  - {fileID: 8300000, guid: 642df78d5cf55224b83d892e0025b1a6, type: 3}
+  bearChaseClip: {fileID: 8300000, guid: 8deba9c83fc49144995fcceccb3db56e, type: 3}
 --- !u!65 &467958376747328240
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5665,7 +5667,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inFOV: {fileID: 5993391329685508388}
   headAim: {fileID: 7960572840372588023}
-  rig: {fileID: 8188191271817525124}
 --- !u!137 &1246478914339106620 stripped
 SkinnedMeshRenderer:
   m_CorrespondingSourceObject: {fileID: 1505606815624415003, guid: 23a805c03931c7f46b2c12acb40e2e05, type: 3}

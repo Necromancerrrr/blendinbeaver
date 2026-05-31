@@ -27,6 +27,8 @@ public class BearIdleState : BearState
         bear.animator.SetFloat("Speed", 0);
 
         bear.agent.speed = bear.bearWalkSpeed;
+        AudioManager.Instance.PlayRandomSFX(bear.bearIdleClips, bear.transform, 1);
+        //AudioManager.Instance.PlaySFX(bear.bearChaseClip, bear.transform, 1);
     }
 
     public override void ExitState()

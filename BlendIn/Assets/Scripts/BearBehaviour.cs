@@ -31,6 +31,10 @@ public class AgentBehaviour : MonoBehaviour
     [HideInInspector] public float playerSpottedRateOfChangePerSecond = 40;
     [HideInInspector] public float playerSpottedMeterMax = 80;
 
+    public AudioClip[] bearIdleClips = new AudioClip[2];
+
+    public AudioClip bearChaseClip;
+
     #region State Machine Vars
 
     public BearStateMachine StateMachine;
@@ -49,7 +53,7 @@ public class AgentBehaviour : MonoBehaviour
 
     #endregion
 
-    private void Awake()
+    private void Start()
     {
         animator = GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();

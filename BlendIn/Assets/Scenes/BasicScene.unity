@@ -8994,6 +8994,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1049969179}
+    - target: {fileID: 4248225460842656321, guid: 785d3425ae5e0ce48b2dd1170841d565, type: 3}
+      propertyPath: m_AdditionalShaderChannelsFlag
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 5844060602071130391, guid: 785d3425ae5e0ce48b2dd1170841d565, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -9484,6 +9488,18 @@ PrefabInstance:
       propertyPath: BlendIn
       value: 
       objectReference: {fileID: 792572105}
+    - target: {fileID: 2305956721476657134, guid: 4e2be3ec87a3eeb4b8f0ffb3e6b7172a, type: 3}
+      propertyPath: bearChaseClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 8deba9c83fc49144995fcceccb3db56e, type: 3}
+    - target: {fileID: 2305956721476657134, guid: 4e2be3ec87a3eeb4b8f0ffb3e6b7172a, type: 3}
+      propertyPath: 'bearIdleClips.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 7f397ecbacec1af46a01224e4a4561ac, type: 3}
+    - target: {fileID: 2305956721476657134, guid: 4e2be3ec87a3eeb4b8f0ffb3e6b7172a, type: 3}
+      propertyPath: 'bearIdleClips.Array.data[1]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 642df78d5cf55224b83d892e0025b1a6, type: 3}
     - target: {fileID: 4497537375693535540, guid: 4e2be3ec87a3eeb4b8f0ffb3e6b7172a, type: 3}
       propertyPath: m_Enabled
       value: 1

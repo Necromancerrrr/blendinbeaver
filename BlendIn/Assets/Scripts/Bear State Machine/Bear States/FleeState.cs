@@ -29,6 +29,8 @@ public class BearFleeState : BearState
         bear.agent.speed = bear.bearRunSpeed;
 
         bear.beesParticles.SetActive(true);
+
+        AudioManager.Instance.PlaySFX(bear.bearIdleClips[0], bear.transform, 1);
     }
 
     public override void ExitState()

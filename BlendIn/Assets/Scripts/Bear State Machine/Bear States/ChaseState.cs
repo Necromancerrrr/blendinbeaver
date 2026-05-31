@@ -17,6 +17,7 @@ public class BearChaseState : BearState
 
         bear.materialSwap.SwapAngryMaterial();
 
+        AudioManager.Instance.PlaySFX(bear.bearChaseClip, bear.transform, 1);
     }
 
     public override void ExitState()
