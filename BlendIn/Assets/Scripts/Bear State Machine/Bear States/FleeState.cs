@@ -7,7 +7,6 @@ public class BearFleeState : BearState
     }
 
     float timer;
-    int randPosMin;
 
     public override void EnterState()
     {
@@ -19,15 +18,13 @@ public class BearFleeState : BearState
 
         bear.beeCollision = false;
 
-        
-
-        randPosMin = Random.Range(0, 2) * 2 - 1;
+        bear.agent.isStopped = false;
 
         // Transform playerTransform = GameObject.FindGameObjectWithTag("Player").transform; // use if it feels like the bear is getting too close to player
 
         bear.growl.SetText("I SCARED!!", 5.0f);
 
-        bear.agent.SetDestination(new Vector3(-2f, bear.transform.position.y, 16.5f)); // change to fix points on map that bear runs to
+        bear.agent.SetDestination(new Vector3(-2f, bear.transform.position.y, 17f)); // change to fix points on map that bear runs to
 
         bear.agent.speed = bear.bearRunSpeed;
 
@@ -43,6 +40,8 @@ public class BearFleeState : BearState
 
     public override void FrameUpdate()
     {
+        base.FrameUpdate();
+
         timer += Time.deltaTime;
 
         bear.playerSpottedMeter = 0;
@@ -58,13 +57,14 @@ public class BearFleeState : BearState
 
     public override void TransitionChecks()
     {
+        base.TransitionChecks();
 
-        if (timer >= 6) // after x seconds go to IDLE
+        if (timer >= 4) // after x seconds go to IDLE
         {
             bearStateMachine.ChangeState(bear.IdleState);
         }
 
-        if (timer > 2 && bear.agent.velocity == Vector3.zero)
+        if (timer > 1 && bear.agent.velocity == Vector3.zero)
         {
             bearStateMachine.ChangeState(bear.IdleState); // after bear reaches beehive go to IDLE
         }
