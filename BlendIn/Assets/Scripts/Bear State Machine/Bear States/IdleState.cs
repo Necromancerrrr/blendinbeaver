@@ -47,7 +47,7 @@ public class BearIdleState : BearState
 
         base.FrameUpdate();
 
-        bear.growl.SetText("I STAND", 5.0f);
+        //bear.growl.SetText("I STAND", 5.0f);
     }
 
     public override void FixedUpdate()

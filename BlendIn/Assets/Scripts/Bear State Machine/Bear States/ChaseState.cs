@@ -13,7 +13,7 @@ public class BearChaseState : BearState
 
         base.EnterState();
 
-        bear.growl.SetText("GRRR!", 5.0f);
+        //bear.growl.SetText("GRRR!", 5.0f);
 
         bear.materialSwap.SwapAngryMaterial();
 

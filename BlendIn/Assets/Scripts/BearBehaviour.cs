@@ -20,7 +20,7 @@ public class AgentBehaviour : MonoBehaviour
     public BearMaterialSwap materialSwap;
     public Player BlendIn;
     public FieldOfView inFOV;
-    public CharacterTextBox growl;
+    //public CharacterTextBox growl;
 
     public GameObject beesParticles;
 

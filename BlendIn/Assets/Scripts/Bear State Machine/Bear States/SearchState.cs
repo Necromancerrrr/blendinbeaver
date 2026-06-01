@@ -17,7 +17,7 @@ public class BearSearchState : BearState
         transitionCheckTimer = 0;
         movementTimer = 0;
 
-        bear.growl.SetText("WHERE BEAVER", 5.0f);
+        //bear.growl.SetText("WHERE BEAVER", 5.0f);
 
         bear.agent.speed = bear.bearWalkSpeed;
 

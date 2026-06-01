@@ -26,7 +26,7 @@ public class BearWanderState : BearState
 
         // Debug.Log(destination);
 
-        bear.growl.SetText("I WANDER", 5.0f);
+        //bear.growl.SetText("I WANDER", 5.0f);
 
         bear.agent.speed = bear.bearWalkSpeed;
     }
