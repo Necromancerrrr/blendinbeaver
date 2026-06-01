@@ -59,7 +59,13 @@ public class StickBag : MonoBehaviour
 
             leftHandScore.text = player.score.ToString();
             rightHandScore.text = player.score.ToString();
-            scoreBoardScore.text = player.score.ToString();
+            
+
+            if (player.score >= MainManager.Instance.highScore)
+            {
+                scoreBoardScore.text = player.score.ToString();
+                MainManager.Instance.highScore = player.score;
+            }
 
             DOTween.Kill("killStick");
 
