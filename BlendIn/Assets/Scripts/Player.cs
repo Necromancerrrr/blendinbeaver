@@ -82,6 +82,8 @@ public class Player : MonoBehaviour
 
             ControllerDistance(PositionCurrentFrameLeftHand, PositionCurrentFrameRightHand);
         }
+
+        
     }
 
 
