@@ -31,6 +31,8 @@ public class AgentBehaviour : MonoBehaviour
     [HideInInspector] public float playerSpottedRateOfChangePerSecond = 40;
     [HideInInspector] public float playerSpottedMeterMax = 80;
 
+    public SceneLoader sceneLoader;
+
     public AudioClip[] bearIdleClips = new AudioClip[2];
 
     public AudioClip bearChaseClip;

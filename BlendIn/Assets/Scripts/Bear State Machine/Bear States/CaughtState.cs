@@ -16,7 +16,7 @@ public class BearCaughtState : BearState
 
         Debug.Log("Player is dead");
 
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        bear.sceneLoader.LoadNewScene("BasicScene");
 
         bear.agent.isStopped = true; // TEMPORARY, REMOVE WHEN LOGIC IS PUT IN
     }
