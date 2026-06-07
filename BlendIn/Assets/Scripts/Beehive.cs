@@ -25,6 +25,7 @@ public class Beehive : MonoBehaviour
     {
         if (transform.position.y <= 0.8)
         {
+            print("BEEHIVE DESTROYED");
             Destroy(gameObject);
         }
     }

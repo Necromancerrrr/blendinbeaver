@@ -8744,57 +8744,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 408904, guid: 4cc487e002327cb43995ca1871bd142e, type: 3}
   m_PrefabInstance: {fileID: 2009126895}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &2044035611
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2044035613}
-  - component: {fileID: 2044035612}
-  m_Layer: 0
-  m_Name: BeehiveSpawner
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &2044035612
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2044035611}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df6e05a5759337344b04f84514d7b045, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  beehiveObject: {fileID: 2802591448810938101, guid: 05a207ab9347b864aaeffcd2d2b812a9, type: 3}
-  beehiveSpawnPoints:
-  - {fileID: 259952013}
-  beeHiveSpawnPointsTaken: 00
-  numberOfBeehiveSpawnPoints: 1
-  initialBeehivesSpawned: 1
-  inTutorial: 1
---- !u!4 &2044035613
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2044035611}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -12.246721, y: -1.7893963, z: -9.128536}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2073659213
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9557,7 +9506,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8203545223983910966, guid: 651567a9d530124499f93de1a7201850, type: 3}
       propertyPath: maxSticks
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8203545223983910966, guid: 651567a9d530124499f93de1a7201850, type: 3}
       propertyPath: numberOfSticks
@@ -9565,7 +9514,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8203545223983910966, guid: 651567a9d530124499f93de1a7201850, type: 3}
       propertyPath: spawnBoundsAroundTree
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8203545223983910966, guid: 651567a9d530124499f93de1a7201850, type: 3}
       propertyPath: spawnPoints.Array.size
@@ -9656,5 +9605,4 @@ SceneRoots:
   - {fileID: 741911398}
   - {fileID: 457101928}
   - {fileID: 1436635252}
-  - {fileID: 2044035613}
   - {fileID: 259952014}

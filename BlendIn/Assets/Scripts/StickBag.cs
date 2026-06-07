@@ -43,6 +43,10 @@ public class StickBag : MonoBehaviour
             collision.gameObject.GetComponent<MeshCollider>().enabled = false;
             collision.rigidbody.constraints = RigidbodyConstraints.FreezeRotation;
 
+            print(collision.gameObject.name + " was destroyed");
+
+            GameObject collidedobject = collision.gameObject;
+
             //replace this if else with a for loop and have all sticks in a list/array
             if (collision.gameObject.name[0] == 'L') // Low
             {
@@ -72,7 +76,8 @@ public class StickBag : MonoBehaviour
             collision.gameObject.transform.DOMove(transform.position, 0.5f).SetEase(Ease.InSine).SetId("killStick");
             collision.gameObject.transform.DOScale(0f, 0.5f).SetEase(Ease.OutElastic).SetId("killStick").OnComplete(() =>
             {
-                Destroy(collision.gameObject);
+                Destroy(collidedobject);
+                
             });
 
             stickSpawner.numberOfSticks -= 1;
