@@ -4620,7 +4620,6 @@ MonoBehaviour:
   beeHiveSpawnPointsTaken: 000000000000
   numberOfBeehiveSpawnPoints: 6
   initialBeehivesSpawned: 4
-  inTutorial: 0
 --- !u!1001 &1074636956
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5483,7 +5482,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4111777603390934963, guid: 3512c67aa90ea4448aabf49cd41ead5f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -77.319275
+      value: -77.693
       objectReference: {fileID: 0}
     - target: {fileID: 4111777603390934963, guid: 3512c67aa90ea4448aabf49cd41ead5f, type: 3}
       propertyPath: m_LocalPosition.z
@@ -7171,7 +7170,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2312007413597493638, guid: 4bb57267c437fe748bcfa1386f708606, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -70.75075
+      value: -71.2
       objectReference: {fileID: 0}
     - target: {fileID: 2312007413597493638, guid: 4bb57267c437fe748bcfa1386f708606, type: 3}
       propertyPath: m_LocalPosition.z

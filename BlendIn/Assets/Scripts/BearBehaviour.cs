@@ -28,7 +28,7 @@ public class AgentBehaviour : MonoBehaviour
     [HideInInspector] public float bearRunSpeed = 6f;
 
     [HideInInspector] public float playerSpottedMeter;
-    [HideInInspector] public float playerSpottedRateOfChangePerSecond = 40;
+    [HideInInspector] public float playerSpottedRateOfChangePerSecond = 60;
     [HideInInspector] public float playerSpottedMeterMax = 80;
 
     public SceneLoader sceneLoader;

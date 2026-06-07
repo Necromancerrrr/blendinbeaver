@@ -17,8 +17,6 @@ public class TEDInstructions : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();
-
-        
     }
 
     void Update()
