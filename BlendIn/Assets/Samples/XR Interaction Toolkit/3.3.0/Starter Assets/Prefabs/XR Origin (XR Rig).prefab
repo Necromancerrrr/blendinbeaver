@@ -1225,7 +1225,7 @@ MonoBehaviour:
   blendingIn: 0
   isRunning: 0
   blendInMeter: 100
-  blendInMeterROC: 2
+  blendInMeterROC: 20
   leftTrigger: {fileID: -2554203394504644680, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   rightTrigger: {fileID: 9053540773058461919, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   blendInSlider: {fileID: 0}

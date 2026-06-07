@@ -11,6 +11,8 @@ public class Beehive : MonoBehaviour
 
     [HideInInspector] public int hiveNumber;
 
+    [SerializeField] private bool tutorial = false;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Awake()
     {
@@ -37,7 +39,11 @@ public class Beehive : MonoBehaviour
 
     private void OnDestroy()
     {
-        beehiveSpawner.OnBeehiveDestroyed(hiveNumber);
+        if (!tutorial)
+        {
+            beehiveSpawner.OnBeehiveDestroyed(hiveNumber);
+        }
+        
         Instantiate(honeySplatParticles, transform.position, Quaternion.identity);
     }
 }
