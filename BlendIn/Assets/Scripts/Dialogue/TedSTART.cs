@@ -1,6 +1,7 @@
 
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.SceneManagement;
 
 public class TEDInstructions : MonoBehaviour
 {
@@ -10,26 +11,31 @@ public class TEDInstructions : MonoBehaviour
     public FieldOfView inFOV;
     public CharacterTextBox TedDialogue;
 
+    public bool isTutorial = false;
+
     private void Start()
     {
         animator = GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();
 
+        
     }
 
     void Update()
     {
-        if (!BlendIn.blendingIn && inFOV.playerInSight)
+        if (isTutorial)
         {
-            TedDialogue.SetText("Hey there, I'm Ted! Can you please bring me those logs?", 10.0f);
-
-            print("TED INTERACTING"); //debug
+            TedDialogue.SetText("Hey there, I'm Ted! Press me when you're ready to explore the real forest!", 10.0f);
+        }
+        else
+        {
+            TedDialogue.SetText("Hey! Be sure to bring me back as much wood as you can. Good luck, and don’t forget to Blend in, Beaver!", 10.0f);
         }
 
-        if (BlendIn.blendingIn && inFOV.playerInSight)
-        {
-            TedDialogue.SetText("Did that shrub just move?", 10.0f);
-        }
+    }
 
+    public void TedSelected()
+    {
+        SceneManager.LoadScene("BasicScene");
     }
 }
